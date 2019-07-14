@@ -5,9 +5,11 @@ categories:
 - xss
 - rce
 - wordpress
+- poc
 tags:
 - webshell
 - wordpress
+- poc
 
 thumbnailImagePosition: left
 thumbnailImage: /img/xss-to-rce-using-wordpress-as-an-example/1.png
