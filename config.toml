@@ -90,20 +90,27 @@ canonifyurls = true
   url = "/index.xml"
 
 [[menu.main]]
-  weight = 0
+  weight = 4
   identifier = "l2"
   name = ""
-  pre = "<br />"
+  pre = ""
   url = "/"
 
-[[menu.misc]]
-  weight = 2
+[[menu.links]]
+  weight = 4
+  identifier = "l2"
+  name = ""
+  pre = ""
+  url = "/"
+
+[[menu.main]]
+  weight = 5
   identifier = "categories"
   name = "Categories"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
   url = "/categories"
 
-[[menu.misc]]
+[[menu.links]]
   weight = 5
   identifier = "tags"
   name = "Tags"
