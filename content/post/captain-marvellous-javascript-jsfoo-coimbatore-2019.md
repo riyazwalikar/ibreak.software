@@ -1,6 +1,6 @@
 ---
 title: "Captain Marvellous JavaScript - JSFoo Coimbatore 2019"
-date: 2019-08-06
+date: 2019-06-10
 categories:
 - javascript
 - conference
@@ -11,7 +11,7 @@ tags:
 - browser fuzzing
 
 thumbnailImagePosition: left
-thumbnailImage: /img/captain-marvellous-javascript---jsfoo-coimbatore-2019/1.png
+thumbnailImage: /img/captain-marvellous-javascript-jsfoo-coimbatore-2019/1.png
 ---
 
 Slides of my talk on the versatality of JavaScript, presented at JSFoo Coimbatore 2019.
@@ -34,4 +34,3 @@ The talk covers the following areas from an offensive security point of view:
 <script async class="speakerdeck-embed" data-id="91a590157f0c45599257b18c5ab251c6" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 ---
-
