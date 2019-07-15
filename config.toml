@@ -56,21 +56,34 @@ canonifyurls = true
 
 [[menu.links]]
   weight = 1
-  identifier = "github"
-  name = "GitHub"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/riyazwalikar"
-
-[[menu.main]]
-  weight = 2
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
   url = "/#about"
 
+[[menu.main]]
+  weight = 2
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
+  url = "https://github.com/riyazwalikar"
 
 [[menu.links]]
   weight = 2
+  identifier = "twitter"
+  name = "Twitter"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>"
+  url = "https://twitter.com/riyazwalikar"
+
+[[menu.main]]
+  weight = 3
+  identifier = "linkedin"
+  name = "LinkedIn"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-linkedin\"></i>"
+  url = "https://www.linkedin.com/in/riyazw/"
+
+[[menu.links]]
+  weight = 3
   identifier = "rss"
   name = "RSS"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
@@ -197,10 +210,10 @@ canonifyurls = true
     icon = "fa-twitter"
     url = "https://twitter.com/intent/tweet?text=%s"
 
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
+#  [[params.sharingOptions]]
+#    name = "Google+"
+#    icon = "fa-google-plus"
+#    url = "https://plus.google.com/share?url=%s"
 
   [params.header.rightLink]
     class = ""
