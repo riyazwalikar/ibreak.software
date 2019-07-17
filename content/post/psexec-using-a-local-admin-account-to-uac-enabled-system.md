@@ -34,7 +34,7 @@ I setup a Windows 7 machine with UAC enabled, an administrative account called `
 1. Open the registry editor using the `regedit` command via Start > Run
 2. Navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
 3. In the right pane, if the `LocalAccountTokenFilterPolicy` DWORD value doesn't exist, create it.
-4. Set its value to 
+4. Set its value to 1 and click OK
 
 ![](/img/psexec-using-a-local-admin-account-to-uac-enabled-system/2.png)
 
