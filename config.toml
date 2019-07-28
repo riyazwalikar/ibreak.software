@@ -18,7 +18,7 @@ defaultContentLanguage = "en-us"
 title = "i break software - My work with different software, bug hunting and interesting tidbits"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
-# googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-144026585-1"
 paginate = 7
 canonifyurls = true
 
@@ -32,7 +32,7 @@ canonifyurls = true
 
 [author]
   name = "Riyaz Walikar"
-  bio = "Build, Break, Repeat <br /> Security enthusiast and tinkerer of code"
+  bio = "Build, Break, Repeat <br /> Security enthusiast and tinkerer of code <br /> [Appsecco](https://appsecco.com) | [null](https://null.co.in) | [OWASP Bangalore](https://www.owasp.org/index.php/Bangalore)"
   # job = "Chief Offensive Security Officer"
   # location = "Bangalore, India"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
