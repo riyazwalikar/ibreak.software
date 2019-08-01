@@ -1,6 +1,6 @@
 ---
 title: "How do I download files in a Remote Desktop Session over SSH"
-date: 2019-07-24
+date: 2019-07-27
 categories:
 - remote desktop
 - tsclient
@@ -103,11 +103,11 @@ Some things I have learnt in the past with this setup
 1. Do not clutter the local folder with data. Once a file is copied, move it to a different location for your analysis. This is because if there are a lot of files in the folder, tsclient and Windows Explorer take a lot of time reading the filenames and file properties so that they can be displayed in the Explorer window. This can appear as if the folder is frozen.
 2. File copy over RDP is slow. Hence it is recommended to zip multiple files into a single file and then initiate the copy instead of copying multiple files.
 3. I have had mixed results in terms of file copy speeds when I reduce the overall Experience of the RDP connection. This is available under `Show Options` > `Experience`. Play with `Satellite` and `Low-speed broadband`
-
+4. You can use this folder just like any other conventional network shared folder and as such, you can move data between the systems (to and fro).
 
 ## Final thoughts
 
-Just a whackish way of gettings files out over an RDP connection and directly to your local host machine if like me you use a Windows VM for RDP. Personally, I prefer using Windows RDP client as it gives me greater control over the screen size and allows sharing of clipboard and resources without any glitches. Your mileage may vary with other tools. I'm not aware of a single tool that allows you to set this up end to end, but aliasing most of the commands covered here does help speed up the overall process. This is my go to method of transferring files safely and securely to my local host machine, especially when the target Windows machine does not have Internet access.
+Just a whackish way of gettings files out over an RDP connection and directly to your local host machine if like me you use a Windows VM for RDP. Personally, I prefer using Windows RDP client as it gives me greater control over the screen size and allows sharing of clipboard and resources without any glitches. Your mileage may vary with other tools. I'm not aware of a single tool that allows you to set this up end to end, but aliasing most of the commands covered here does help speed up the overall process. This is my go to method of transferring files safely and securely to my local host machine, especially when the target Windows machine does not have Internet access and/or is accessible only to a fixed IP.
 
 That's all in this post! Till the next one, Happy Hacking!
 
