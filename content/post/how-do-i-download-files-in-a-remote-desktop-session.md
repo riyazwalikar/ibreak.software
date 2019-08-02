@@ -24,9 +24,9 @@ A quick blog post to show how I move files between a remote desktop connected ma
 
 Hoenstly, the title of this post should be "How do I download files in a Remote Desktop Session when connected via a SOCKS proxy from a Windows Remote Desktop client running as a VirtualBox virtual machine on a Ubuntu host", but let's keep that for the rest of the blogpost.
 
-It is common knowledge that the Windows tsclient and Windows RDP Shared Local Resources can be used to move files between a remote Windows Desktop Server connected via RDP from a Windows client. Nothing changes in terms of how the files are transferred even when you tunnel your RDP connection through SSH using SOCKS. This post is about a setup that I use to access Windows Servers using Remote Desktop, especially when the remote target is IP whitelisted and my Windows client is a Virtualbox virtual machine.
+It is common knowledge that the [Windows tsclient and Windows RDP Shared Local Resources can be used to move files between a remote Windows Desktop Server connected via RDP from a Windows client](https://blogs.msdn.microsoft.com/brendangrant/2009/02/17/the-most-useful-feature-of-remote-desktop-i-never-knew-about/) via the `\\tsclient` network machine. Nothing changes in terms of how the files are transferred even when you tunnel your RDP connection through SSH using SOCKS. This post is about a setup that I use to access Windows Servers using Remote Desktop, especially when the remote target is IP whitelisted and my Windows client is a Virtualbox virtual machine on a host linux system.
 
-The setup is somewhat akin to a digital version of a Rube Goldberg's machine given the connectivity, but is not uncommon in the real world when performing penetration tests or connecting to a Windows Server accessible only to a few IP addresses.
+The setup is somewhat akin to a digital version of a Rube Goldberg's machine given the connectivity, but is not uncommon in the real world when performing penetration tests or when connecting to a Windows Server accessible only to a few IP addresses.
 
 ## The Setup
 
