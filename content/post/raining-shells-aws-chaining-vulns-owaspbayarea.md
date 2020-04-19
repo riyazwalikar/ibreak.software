@@ -9,6 +9,8 @@ categories:
 tags:
 - shells
 - exploitation
+- iam
+- aws
 
 thumbnailImagePosition: left
 thumbnailImage: /img/raining-shells-aws-chaining-vulns-owaspbayarea/1.png
