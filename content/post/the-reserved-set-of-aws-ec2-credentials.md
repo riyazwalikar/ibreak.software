@@ -1,6 +1,6 @@
 ---
 title: "What are these 'reserved' set of security-credentials in AWS?"
-date: 2020-04-25
+date: 2020-04-26
 categories:
 - cloud
 - aws
