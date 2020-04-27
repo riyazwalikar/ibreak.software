@@ -21,7 +21,7 @@ A quick blog post to investigate what `instance-identity` security credentials a
 
 ## Introduction
 
-When we attach a role to an EC2 instance, we can generate temporary AWS credentials by querying the instance meta-data endpoint at `http://169.254.169.254/latest/meta-data/iam/security-credentials/role_name`. This is pretty well known and is used by numerous services and implementations throughout the AWS world. It is also one of the first endpoints that attackers query when a SSRF is discovered on an EC2 hosted web application.
+When we attach a role to an EC2 instance, we can generate temporary AWS credentials by querying the instance meta-data endpoint at `http://169.254.169.254/latest/meta-data/iam/security-credentials/role_name`. This is pretty well known and is used by numerous services and implementations throughout the AWS world. It is also one of the first endpoints that [attackers query](https://blog.appsecco.com/getting-shell-and-data-access-in-aws-by-chaining-vulnerabilities-7630fa57c7ed) when a [SSRF](https://blog.appsecco.com/finding-ssrf-via-html-injection-inside-a-pdf-file-on-aws-ec2-214cc5ec5d90) is discovered on an EC2 hosted web application.
 
 However, in this post, let us try to dig up on the lesser known (and used) endpoint at `http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance` that is at best vaguely documented by AWS and does provide, what appears to be security credentials that can be used programmatically.
 
@@ -43,14 +43,6 @@ The following curl command will fetch you the credentials that this metadata end
 ```bash
 curl http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
 ```
-
-For instances with IMDSv2
-
-```bash
-TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
-&& curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
-```
-
 ![](/img/the-reserved-set-of-aws-ec2-credentials/1.png)
 
 ## Analysis of the credentials
@@ -158,6 +150,15 @@ Turns out the credentials provide no known or documented form of access to the A
 For now, I will go with AWS on this one and consider that these credentials are truly `[Reserved for internal use only]`, unless I find (or anyone else) that the credentials can be used to do something else.
 
 Do let me know if you do find any other API calls that the credentials can successfully use and I will update the post! Till I write again, Happy Hacking!
+
+**Bonus Content - Generating Tokens on IMDSv2**
+
+For instances with IMDSv2
+
+```bash
+TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
+&& curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
+```
 
 ## References
 
