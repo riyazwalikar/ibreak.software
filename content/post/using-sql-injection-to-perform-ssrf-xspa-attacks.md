@@ -1,6 +1,6 @@
 ---
 title: "Using SQL Injection to perform SSRF/XSPA attacks"
-date: 2020-06-28
+date: 2020-06-27
 categories:
 - sql injection
 - ssrf
