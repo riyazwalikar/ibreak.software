@@ -158,7 +158,7 @@ For Blind SQL Injections you could redirect output of the UDF functions to a tem
 
 Using Oracle to do Out of Band HTTP and DNS requests is well documented but as a means of exfiltrating SQL data in injections. We can always modify these techniques/functions to do other SSRF/XSPA.
 
-Installing Oracle can be really painful, especially if you want to set up a quick instance to try out commands. My friend and colleague at Appsecco, Abhisek Datta, pointed me to https://github.com/MaksymBilenko/docker-oracle-12c that allowed me to setup an instance on a t2.large AWS Ubuntu machine and Docker.
+Installing Oracle can be really painful, especially if you want to set up a quick instance to try out commands. My friend and colleague at <a href="https://appsecco.com" target="_blank" rel="noopener noreferrer">Appsecco</a>, <a href="https://github.com/abhisek" target="_blank" rel="noopener noreferrer">Abhisek Datta</a>, pointed me to https://github.com/MaksymBilenko/docker-oracle-12c that allowed me to setup an instance on a t2.large AWS Ubuntu machine and Docker.
 
 I ran the docker command with the `--network="host"` flag so that I could mimic Oracle as an native install with full network access, for the course of this blogpost.
 
