@@ -32,19 +32,9 @@ canonifyurls = true
 
 [author]
   name = "Riyaz Walikar"
-  bio = "Build, Break, Repeat <br /> Security enthusiast and tinkerer of code <br /> [Appsecco](https://appsecco.com) | [null](https://null.co.in) | [OWASP Bangalore](https://www.owasp.org/index.php/Bangalore)"
-  # job = "Chief Offensive Security Officer"
-  # location = "Bangalore, India"
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  # gravatarEmail = "riyazwalikar@gmail.com"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
+  bio = "Build, Break, Repeat <br /> Security enthusiast and tinkerer of code <br> [Kloudle](https://kloudle.com) | [Appsecco](https://appsecco.com) | [null](https://null.co.in) | [OWASP Bangalore](https://www.owasp.org/index.php/Bangalore)"
   picture = "images/riyazwalikar.jpg"
-  # Your Twitter username without the @. E.g : riyazwalikar
-  twitter = "riyazwalikar"
-  # linkedin = ""
-  # Your google plus profile id. E.g : +riyazwalikar or 114625208755123718311
-  # googlePlus = "+riyazwalikar"
+
 
 # Menu Configuration
 [[menu.main]]
