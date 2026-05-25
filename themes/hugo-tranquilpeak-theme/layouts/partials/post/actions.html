@@ -9,7 +9,7 @@
           {{ else }}
             <a class="post-action-btn btn btn--disabled">
           {{ end }}
-              <i class="fa fa-angle-left"></i>
+              <i class="fas fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">{{ i18n "pagination.previous" }}</span>
             </a>
         </li>
@@ -20,7 +20,7 @@
             <a class="post-action-btn btn btn--disabled">
           {{ end }}
               <span class="hide-xs hide-sm text-small icon-mr">{{ i18n "pagination.next" }}</span>
-              <i class="fa fa-angle-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
         </li>
       {{ else }}
@@ -30,7 +30,7 @@
           {{ else }}
             <a class="post-action-btn btn btn--disabled">
           {{ end }}
-              <i class="fa fa-angle-left"></i>
+              <i class="fas fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">{{ i18n "pagination.next" }}</span>
             </a>
         </li>
@@ -41,7 +41,7 @@
             <a class="post-action-btn btn btn--disabled">
           {{ end }}
               <span class="hide-xs hide-sm text-small icon-mr">{{ i18n "pagination.previous" }}</span>
-              <i class="fa fa-angle-right"></i>
+              <i class="fas fa-angle-right"></i>
             </a>
         </li>
       {{ end }}
@@ -51,7 +51,7 @@
   {{ if (not (eq .Params.showSocial false)) }}
     <li class="post-action hide-lg hide-md hide-sm">
       <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="{{ i18n "post.share" }}">
-        <i class="fa fa-share-alt" aria-hidden="true"></i>
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
       </a>
     </li>
     {{ range .Site.Params.sharingOptions }}
@@ -71,17 +71,17 @@
   {{ else if .Site.Params.comment.gitalk.enable }}
     <li class="post-action">
       <a class="post-action-btn btn btn--default" href="#gitalk" aria-label="{{ i18n "post.comment" }}">
-        <i class="fa fa-comment"></i>
+        <i class="fas fa-comment"></i>
       </a>
     </li>
   {{ end }}
   <li class="post-action">
     {{ if findRE "<!--\\s*[t|T][o|O][c|C]\\s*-->" .Content }}
       <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="{{ i18n "post.toc" }}">
-      <i class="fa fa-list" aria-hidden="true"></i>
+      <i class="fas fa-list" aria-hidden="true"></i>
     {{ else }}
       <a class="post-action-btn btn btn--default" href="#top" aria-label="{{ i18n "post.back_to_top" }}">
-      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
     {{ end }}
     </a>
   </li>

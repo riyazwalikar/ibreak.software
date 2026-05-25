@@ -5,7 +5,7 @@
         {{ if .Paginator.HasPrev }}
           <li class="pagination-prev">
             <a class="btn btn--default btn--small" href="{{ .Paginator.Prev.URL }}" aria-label="{{ i18n "pagination.older_posts" }}">
-              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <i class="fas fa-angle-left text-base icon-mr"></i>
               <span>{{ i18n "pagination.older_posts" }}</span>
             </a>
           </li>
@@ -14,7 +14,7 @@
           <li class="pagination-next">
             <a class="btn btn--default btn--small" href="{{ .Paginator.Next.URL }}" aria-label="{{ i18n "pagination.newer_posts" }}">
               <span>{{ i18n "pagination.newer_posts" }}</span>
-              <i class="fa fa-angle-right text-base icon-ml"></i>
+              <i class="fas fa-angle-right text-base icon-ml"></i>
             </a>
           </li>
         {{ end }}
@@ -22,7 +22,7 @@
         {{ if .Paginator.HasPrev }}
           <li class="pagination-prev">
             <a class="btn btn--default btn--small" href="{{ .Paginator.Prev.URL }}" aria-label="{{ i18n "pagination.newer_posts" }}">
-              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <i class="fas fa-angle-left text-base icon-mr"></i>
               <span>{{ i18n "pagination.newer_posts" }}</span>
             </a>
           </li>
@@ -31,7 +31,7 @@
           <li class="pagination-next">
             <a class="btn btn--default btn--small" href="{{ .Paginator.Next.URL }}" aria-label="{{ i18n "pagination.older_posts" }}">
               <span>{{ i18n "pagination.older_posts" }}</span>
-              <i class="fa fa-angle-right text-base icon-ml"></i>
+              <i class="fas fa-angle-right text-base icon-ml"></i>
             </a>
           </li>
         {{ end }}
