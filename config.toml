@@ -26,7 +26,7 @@ canonifyurls = true
   unsafe = true
 
 [permalinks]
-  post = "/:year/:month/:slug/"
+  post = "/:year/:month/:contentbasename/"
 
 [taxonomies]
   tag = "tags"
