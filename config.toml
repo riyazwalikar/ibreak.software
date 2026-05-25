@@ -15,7 +15,7 @@
 baseURL = "/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "i break software - My work with different software, bug hunting and interesting tidbits"
+title = "i break software - My work with different software, bug hunting and interesting tidbits."
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
 googleAnalytics = "UA-144026585-1"
@@ -32,7 +32,7 @@ canonifyurls = true
 
 [author]
   name = "Riyaz Walikar"
-  bio = "Build, Break, Repeat <br /> Security enthusiast and tinkerer of code <br> [Kloudle](https://kloudle.com) | [Appsecco](https://appsecco.com) | [null](https://null.co.in) | [OWASP Bangalore](https://www.owasp.org/index.php/Bangalore)"
+  bio = "Build, Break, Repeat <br /> Independent Security Researcher"
   picture = "images/riyazwalikar.jpg"
 
 
