@@ -1,0 +1,148 @@
+@use "sass:math";
+
+.post {
+    position:       relative;
+    width:          100%;
+    display:        inline-block;
+    vertical-align: top;
+    @include sidebar-slide-animation;
+
+    .post-header {
+        .post-title {
+            margin:     0;
+            word-break: initial;
+            overflow:   hidden;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    // Post meta contains post's date, post's categories and tags
+    .post-meta {
+        line-height: 1.5em;
+        font-family: map-get($font-families, 'post-meta');
+        font-size:   map-get($font-size, small);
+        font-weight: 400;
+        color:       map-get($colors, light);
+
+        a {
+            color: map-get($colors, light);
+        }
+    }
+    .post-content {
+        text-rendering: optimizelegibility;
+        letter-spacing: -0.3px;
+        font-family:    map-get($font-families, 'post-content');
+        color:          map-get($colors, base);
+        margin-top:     20px;
+        font-weight:    400;
+        overflow:       hidden;
+        @include prefix('hypens', 'auto', 'webkit' 'moz');
+
+        img {
+            display:   block;
+            width:     auto;
+            max-width: 100%;
+        }
+        :not(blockquote):not(li):not(.alert) {
+            & > p {
+                margin: 1.5em 0 0 0;
+            }
+        }
+        li {
+            p {
+                margin: 0 0 0 0;
+            }
+        }
+    }
+    .post-footer {
+        margin-top: 20px;
+        &-tags {
+            padding-bottom: 10px;
+            margin-bottom:  10px;
+            border-bottom:  1px solid #eef2f8;
+        }
+    }
+}
+
+// Increase the font size of the post's title on medium screen (only for single post view)
+@media #{$medium-only} {
+    .post {
+        .post-header {
+            .post-title {
+                font-size: map-get($headings-font-size, h1) + 0.5rem;
+            }
+        }
+    }
+}
+
+@media #{$large-only} {
+    #main {
+        // Display bottom bar in small size and push it from the size of the large sidebar
+        &[data-behavior="1"] .post.pushed,
+        &[data-behavior="2"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, lg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in medium size and push it from the size of the medium sidebar
+        &[data-behavior="3"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, md-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in large size and push it from the size of the large sidebar
+        &[data-behavior="4"] .post.pushed,
+        &[data-behavior="5"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, lg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in large size and push it from the size of the medium sidebar
+        &[data-behavior="6"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, md-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+    }
+}
+
+@media #{$xlarge-and-up} {
+    #main {
+        // Display bottom bar in extra small size and push it from the size of the extra large sidebar
+        &[data-behavior="1"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, xlg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in small size and push it from the size of the large sidebar
+        &[data-behavior="2"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, lg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in medium size and push it from the size of the medium sidebar
+        &[data-behavior="3"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, md-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in large size and push it from the size of the extra large sidebar
+        &[data-behavior="4"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, xlg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in large size and push it from the size of the extra large sidebar
+        &[data-behavior="5"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, lg-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+        // Display bottom bar in large size and push it from the size of the medium sidebar
+        &[data-behavior="6"] .post.pushed {
+            @include prefix(transform, translate3d(-#{math.div(map-get($sidebar, md-screen-width), 2)}, 0, 0), 'webkit' 'moz');
+        }
+    }
+}
+
+// Increase font size of the post's title on large screen (only for single post view)
+@media #{$large-and-up} {
+    .post {
+        .post-header {
+            .post-title {
+                font-size: map-get($headings-font-size, h1) + 0.9rem;
+            }
+        }
+    }
+}
+
+// Increase font-size on medium and large screen
+@media #{$medium-and-up} {
+    .post-content {
+        font-size: 1.7rem;
+    }
+}

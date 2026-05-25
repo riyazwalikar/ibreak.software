@@ -1,0 +1,47 @@
+{{ partial "head.html" . }}
+  <body>
+    <div id="blog">
+      {{ partial "header.html" . }}
+      {{ partial "sidebar.html" . }}
+      {{ partial "post/header-cover.html" . }}
+      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
+        class="{{ with .Params.coverimage }}hasCover{{ end }}
+               {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
+               {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
+        <article class="post" id="top">
+          {{ with .Params.covercaption }}
+            <span class="post-header-cover-caption caption">{{ . | markdownify }}</span>
+          {{ end }}
+          {{ if or (not .Params.coverimage) (eq .Params.covermeta "out") }}
+            {{ partial "post/header.html" . }}
+          {{ end }}
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              {{ .Content }}
+              {{ partial "post/gallery.html" . }}
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            {{ if (not (eq .Params.showTags false)) }}
+              {{ with .Params.tags }}
+                {{ $tagsLength := len . }}
+                {{ if gt $tagsLength 0 }}
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">{{ i18n "post.tagged_in" }}</span><br/>
+                    {{ partial "post/tag.html" $ }}
+                  </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            {{ partial "post/actions.html" . }}
+            {{ partial "post/comment.html" . }}
+          </div>
+        </article>
+        {{ partial "footer.html" . }}
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
+        {{ partial "post/actions.html" . }}
+      </div>
+      {{ partial "post/share-options.html" . }}
+    </div>
+{{ partial "foot.html" . }}

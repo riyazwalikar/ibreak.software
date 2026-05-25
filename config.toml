@@ -22,6 +22,9 @@ googleAnalytics = "UA-144026585-1"
 paginate = 7
 canonifyurls = true
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
@@ -30,7 +33,7 @@ canonifyurls = true
   category = "categories"
   archive = "archives"
 
-[author]
+[params.author]
   name = "Riyaz Walikar"
   bio = "Build, Break, Repeat <br /> Independent Security Researcher"
   picture = "images/riyazwalikar.jpg"
