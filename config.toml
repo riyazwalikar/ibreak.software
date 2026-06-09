@@ -52,7 +52,7 @@ canonifyurls = true
   identifier = "about"
   name = "About"
   pre = "<i class=\"sidebar-button-icon fas fa-lg fa-question\"></i>"
-  url = "/#about"
+  url = "/about/"
 
 [[menu.main]]
   weight = 2
@@ -188,8 +188,8 @@ canonifyurls = true
 
   # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
   # they have to be referred from static root. Example
-  # [[params.customCSS]]
-  #   href = "css/mystyle.css"
+  [[params.customCSS]]
+    href = "css/about-timeline.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example
@@ -218,11 +218,11 @@ canonifyurls = true
   [params.header.rightLink]
     class = ""
     icon = ""
-    url = "/#about"
+    url = "/about/"
 
   # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  # url = "/#about"
+  [params.sidebar.profile]
+  url = "/about/"
 
   # Customize copyright value "© 201. All Rights Reserved"
   [params.footer]

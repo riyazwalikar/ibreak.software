@@ -1,0 +1,628 @@
+/* ============================================
+   About Page — Timeline & Content Styles
+   ============================================ */
+
+/* ============================================
+   Full-Width Page (About) — no sidebar
+   ============================================ */
+
+/* Override sidebar width — push main content full-width */
+.page-full-width {
+    width: 100% !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    float: none !important;
+    padding: 0 2rem;
+}
+
+/* Override theme's narrow content wrapper */
+.page-full-width .main-content-wrap {
+    max-width: 1000px;
+}
+
+/* Hide sidebar button since sidebar not rendered */
+.page-full-width #btn-open-sidebar {
+    display: none;
+}
+
+/* Back to blog navigation link — aligned with About heading via main-content-wrap */
+.page-back-nav {
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.page-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #3a7bd5;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.page-back-link:hover {
+    background: #eef3ff;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* About page — author photo in header already via header.rightLink config */
+
+/* Responsive full-width */
+@media (max-width: 768px) {
+    .page-full-width {
+        padding: 0 1rem;
+    }
+}
+
+/* --- Intro section --- */
+.about-intro {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+/* ============================================
+   Professional Career Table
+   ============================================ */
+.career-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.career-table-wrapper table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 0.93em;
+    line-height: 1.6;
+    background: #fff;
+}
+
+.career-table-wrapper thead {
+    display: none;
+}
+
+.career-table-wrapper th {
+    display: none;
+}
+
+/* Hugo renders markdown table with thead hidden — target rows directly */
+.career-table-wrapper tr {
+    border-bottom: 1px solid #eee;
+}
+
+.career-table-wrapper tr:last-child {
+    border-bottom: none;
+}
+
+.career-table-wrapper td {
+    padding: 0.9rem 1rem;
+    vertical-align: top;
+    color: #444;
+}
+
+/* Company name column — bold, colored left border */
+.career-table-wrapper td:first-child {
+    font-weight: 700;
+    color: #2c3e50;
+    border-left: 4px solid transparent;
+    padding-left: 0.9rem;
+    width: 16%;
+}
+
+.career-table-wrapper tr:nth-child(1) td:first-child {
+    border-left-color: #3a7bd5;
+}
+.career-table-wrapper tr:nth-child(2) td:first-child {
+    border-left-color: #6c5ce7;
+}
+.career-table-wrapper tr:nth-child(3) td:first-child {
+    border-left-color: #a855f7;
+}
+.career-table-wrapper tr:nth-child(4) td:first-child {
+    border-left-color: #ec4899;
+}
+.career-table-wrapper tr:nth-child(5) td:first-child {
+    border-left-color: #f97316;
+}
+.career-table-wrapper tr:nth-child(6) td:first-child {
+    border-left-color: #eab308;
+}
+
+.career-table-wrapper td:first-child a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.career-table-wrapper td:first-child a:hover {
+    color: #3a7bd5;
+    text-decoration: underline;
+}
+
+/* Time period column */
+.career-table-wrapper td:nth-child(2) {
+    color: #2c3e50;
+    font-size: 0.9em;
+    width: 12%;
+}
+
+/* Role column — dark, not blue (avoits looking like a link) */
+.career-table-wrapper td:nth-child(3) {
+    color: #2c3e50;
+    width: 22%;
+}
+
+/* Responsibilities column */
+.career-table-wrapper td:nth-child(4) {
+    color: #555;
+    line-height: 1.7;
+    width: 50%;
+}
+
+/* Zebra striping */
+.career-table-wrapper tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+/* Hover */
+.career-table-wrapper tr:hover {
+    background: #f0f4ff;
+}
+
+/* Mobile — stack cells */
+@media (max-width: 768px) {
+    .career-table-wrapper table,
+    .career-table-wrapper tbody,
+    .career-table-wrapper tr,
+    .career-table-wrapper td {
+        display: block;
+    }
+    .career-table-wrapper tr {
+        padding: 0.8rem 0;
+        border-bottom: 2px solid #eee;
+    }
+    .career-table-wrapper td {
+        padding: 0.25rem 0.8rem;
+    }
+    .career-table-wrapper td:first-child {
+        border-left: none;
+        font-size: 1.05em;
+        padding-bottom: 0.3rem;
+    }
+    .career-table-wrapper td:nth-child(2) {
+        color: #888;
+        font-size: 0.82em;
+    }
+    .career-table-wrapper td:nth-child(3) {
+        font-size: 0.9em;
+        padding-bottom: 0.3rem;
+    }
+    .career-table-wrapper td:nth-child(4) {
+        font-size: 0.88em;
+        padding-top: 0.2rem;
+    }
+    .career-table-wrapper tr:nth-child(1) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #3a7bd5;
+    }
+    .career-table-wrapper tr:nth-child(2) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #6c5ce7;
+    }
+    .career-table-wrapper tr:nth-child(3) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #a855f7;
+    }
+    .career-table-wrapper tr:nth-child(4) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #ec4899;
+    }
+    .career-table-wrapper tr:nth-child(5) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #f97316;
+    }
+    .career-table-wrapper tr:nth-child(6) td:first-child {
+        border-left: none;
+        border-bottom: 3px solid #eab308;
+    }
+}
+
+/* --- Section headers --- */
+.about-section-title {
+    font-size: 1.6em;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* ============================================
+   Vertical Timeline (Tree Design)
+   ============================================ */
+.timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    margin: 2rem 0 3rem;
+}
+
+/* Vertical trunk line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.85rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+        to bottom,
+        #3a7bd5 0%,
+        #3a7bd5 15%,
+        #6c5ce7 35%,
+        #a855f7 55%,
+        #ec4899 75%,
+        #f97316 100%
+    );
+    border-radius: 2px;
+}
+
+/* Each year node */
+.timeline-year {
+    position: relative;
+    margin-bottom: 2.2rem;
+    padding-left: 2rem;
+}
+
+/* Circle marker */
+.timeline-year::before {
+    content: "";
+    position: absolute;
+    left: -2.05rem;
+    top: 0.35rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #3a7bd5;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.15);
+    z-index: 1;
+    transition: all 0.2s ease;
+}
+
+/* Color variation per year group */
+.timeline-year:nth-child(6n + 1)::before {
+    border-color: #3a7bd5;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.15);
+}
+.timeline-year:nth-child(6n + 2)::before {
+    border-color: #4c8de0;
+    box-shadow: 0 0 0 3px rgba(76, 141, 224, 0.15);
+}
+.timeline-year:nth-child(6n + 3)::before {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+.timeline-year:nth-child(6n + 4)::before {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+.timeline-year:nth-child(6n + 5)::before {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
+}
+.timeline-year:nth-child(6n + 6)::before {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.timeline-year:hover::before {
+    transform: scale(1.4);
+    box-shadow: 0 0 0 6px rgba(58, 123, 213, 0.18);
+}
+
+/* Year heading */
+.timeline-year-heading {
+    font-size: 1.4em;
+    font-weight: 900;
+    color: #2c3e50;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+}
+
+/* Event entries under a year */
+.timeline-events {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-event {
+    position: relative;
+    padding: 0.35rem 0 0.35rem 1.2rem;
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.6;
+}
+
+.timeline-event::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #888;
+    font-size: 0.8em;
+}
+
+.timeline-event strong {
+    color: #2c3e50;
+}
+
+.timeline-event em {
+    color: #777;
+    font-style: normal;
+    font-size: 0.9em;
+}
+
+/* Placeholder styling */
+.timeline-placeholder {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.9em;
+    padding: 0.35rem 0 0.35rem 1.2rem;
+}
+
+/* ============================================
+   Talks & Content Section
+   ============================================ */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0 3rem;
+}
+
+.content-card {
+    background: #f8f9fa;
+    border-left: 4px solid #3a7bd5;
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+.content-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.content-card:nth-child(6n + 2) {
+    border-left-color: #6c5ce7;
+}
+.content-card:nth-child(6n + 3) {
+    border-left-color: #a855f7;
+}
+.content-card:nth-child(6n + 4) {
+    border-left-color: #ec4899;
+}
+.content-card:nth-child(6n + 5) {
+    border-left-color: #f97316;
+}
+.content-card:nth-child(6n + 6) {
+    border-left-color: #eab308;
+}
+
+.content-card-title {
+    font-weight: 700;
+    font-size: 1.05em;
+    margin-bottom: 0.3rem;
+    color: #2c3e50;
+}
+
+.content-card-meta {
+    font-size: 0.82em;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.content-card a {
+    color: #3a7bd5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.content-card a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   External Links List
+   ============================================ */
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.6rem;
+}
+
+.links-list li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    color: #3a7bd5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.15s ease;
+}
+
+.links-list li a:hover {
+    background: #e8edf5;
+    text-decoration: none;
+}
+
+/* ============================================
+   Career Journey Company Cards
+   ============================================ */
+.career-companies {
+    margin: 2rem 0 3rem;
+}
+
+.career-company {
+    position: relative;
+    padding: 1.5rem 0 1.5rem 2.5rem;
+    border-left: 3px solid #e0e0e0;
+    margin-left: 0.5rem;
+}
+
+.career-company:last-child {
+    border-left-color: transparent;
+}
+
+.career-company::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 2rem;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #3a7bd5;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
+}
+
+.career-company:nth-child(6n + 1)::before {
+    background: #3a7bd5;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
+}
+.career-company:nth-child(6n + 2)::before {
+    background: #4c8de0;
+    box-shadow: 0 0 0 3px rgba(76, 141, 224, 0.2);
+}
+.career-company:nth-child(6n + 3)::before {
+    background: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+.career-company:nth-child(6n + 4)::before {
+    background: #a855f7;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+.career-company:nth-child(6n + 5)::before {
+    background: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+.career-company:nth-child(6n + 6)::before {
+    background: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+.career-company-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.career-company-header h3 {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.career-company-header h3 a {
+    color: #3a7bd5;
+    text-decoration: none;
+}
+
+.career-company-header h3 a:hover {
+    text-decoration: underline;
+}
+
+.career-company-period {
+    font-size: 0.82em;
+    font-weight: 600;
+    color: #fff;
+    background: #3a7bd5;
+    padding: 0.2em 0.7em;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.career-company:nth-child(6n + 1) .career-company-period {
+    background: #3a7bd5;
+}
+.career-company:nth-child(6n + 2) .career-company-period {
+    background: #4c8de0;
+}
+.career-company:nth-child(6n + 3) .career-company-period {
+    background: #6c5ce7;
+}
+.career-company:nth-child(6n + 4) .career-company-period {
+    background: #a855f7;
+}
+.career-company:nth-child(6n + 5) .career-company-period {
+    background: #ec4899;
+}
+.career-company:nth-child(6n + 6) .career-company-period {
+    background: #f97316;
+}
+
+.career-company-body {
+    color: #444;
+    line-height: 1.7;
+    font-size: 0.95em;
+}
+
+.career-company-body p {
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1.8rem;
+    }
+    .timeline::before {
+        left: 0.55rem;
+    }
+    .timeline-year {
+        padding-left: 1.2rem;
+    }
+    .timeline-year::before {
+        left: -1.65rem;
+        width: 11px;
+        height: 11px;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .links-list {
+        grid-template-columns: 1fr;
+    }
+    .career-company {
+        padding-left: 1.5rem;
+        margin-left: 0.3rem;
+    }
+    .career-company-header {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}

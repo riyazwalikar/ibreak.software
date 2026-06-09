@@ -1,0 +1,34 @@
+<nav id="sidebar" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
+  <div class="sidebar-container">
+    {{ $authorPicture := "" }}
+    {{ if $.Site.Params.author.gravatarEmail }}
+      {{ $authorPicture = printf "https://www.gravatar.com/avatar/%s" (urlize (md5 $.Site.Params.author.gravatarEmail)) }}
+    {{ else if $.Site.Params.author.gravataremail }}
+      {{ $authorPicture = printf "https://www.gravatar.com/avatar/%s" (urlize (md5 $.Site.Params.author.gravataremail)) }}
+    {{ else if $.Site.Params.author.picture }}
+      {{ $authorPicture = absURL $.Site.Params.author.picture }}
+    {{ end }}
+    {{ with $authorPicture }}
+      <div class="sidebar-profile">
+        <a href="{{ with $.Site.Params.sidebar }}{{ with .profile }}{{ with .url }}{{ . }}{{ else }}/#about{{ end }}{{ else }}/#about{{ end }}{{ else }}/#about{{ end }}" aria-label="{{ i18n "global.read_more_about_author"}}">
+          <img class="sidebar-profile-picture" src="{{ . }}{{ if in . "//www.gravatar.com/avatar/" }}?s=110{{ end }}" alt="{{ i18n "global.author_picture" }}" />
+        </a>
+        <a href="{{ with $.Site.Params.sidebar }}{{ with .profile }}{{ with .url }}{{ . }}{{ else }}/about/{{ end }}{{ else }}/about/{{ end }}{{ else }}/about/{{ end }}" aria-label="{{ i18n "global.read_more_about_author"}}">
+          <h4 class="sidebar-profile-name">{{ $.Site.Params.author.name }}</h4>
+        </a>
+        {{ with $.Site.Params.author.bio }}
+          <h5 class="sidebar-profile-bio">{{ . | markdownify }}</h5>
+        {{ end }}
+      </div>
+    {{ end }}
+    <ul class="sidebar-buttons">
+      {{ partial "menu.html" (dict "menu" .Site.Menus.main "root" $) }}
+    </ul>
+    <ul class="sidebar-buttons">
+      {{ partial "menu.html" (dict "menu" .Site.Menus.links "root" $) }}
+    </ul>
+    <ul class="sidebar-buttons">
+      {{ partial "menu.html" (dict "menu" .Site.Menus.misc "root" $) }}
+    </ul>
+  </div>
+</nav>
