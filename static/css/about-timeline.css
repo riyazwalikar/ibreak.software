@@ -55,12 +55,6 @@
 
 /* About page — author photo in header already via header.rightLink config */
 
-/* Responsive full-width */
-@media (max-width: 768px) {
-    .page-full-width {
-        padding: 0 1rem;
-    }
-}
 
 /* --- Intro section --- */
 .about-intro {
@@ -177,64 +171,6 @@
 /* Hover */
 .career-table-wrapper tr:hover {
     background: #f0f4ff;
-}
-
-/* Mobile — stack cells */
-@media (max-width: 768px) {
-    .career-table-wrapper table,
-    .career-table-wrapper tbody,
-    .career-table-wrapper tr,
-    .career-table-wrapper td {
-        display: block;
-    }
-    .career-table-wrapper tr {
-        padding: 0.8rem 0;
-        border-bottom: 2px solid #eee;
-    }
-    .career-table-wrapper td {
-        padding: 0.25rem 0.8rem;
-    }
-    .career-table-wrapper td:first-child {
-        border-left: none;
-        font-size: 1.05em;
-        padding-bottom: 0.3rem;
-    }
-    .career-table-wrapper td:nth-child(2) {
-        color: #888;
-        font-size: 0.82em;
-    }
-    .career-table-wrapper td:nth-child(3) {
-        font-size: 0.9em;
-        padding-bottom: 0.3rem;
-    }
-    .career-table-wrapper td:nth-child(4) {
-        font-size: 0.88em;
-        padding-top: 0.2rem;
-    }
-    .career-table-wrapper tr:nth-child(1) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #3a7bd5;
-    }
-    .career-table-wrapper tr:nth-child(2) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #6c5ce7;
-    }
-    .career-table-wrapper tr:nth-child(3) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #a855f7;
-    }
-    .career-table-wrapper tr:nth-child(4) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #ec4899;
-    }
-    .career-table-wrapper tr:nth-child(5) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #f97316;
-    }
-    .career-table-wrapper tr:nth-child(6) td:first-child {
-        border-left: none;
-        border-bottom: 3px solid #eab308;
-    }
 }
 
 /* --- Section headers --- */
@@ -596,7 +532,71 @@
 /* ============================================
    Responsive
    ============================================ */
+/* ============================================
+   Mobile Responsive (≤768px)
+   ============================================ */
 @media (max-width: 768px) {
+    /* Header bar: long site title — keep one line, truncate, clear the
+       hamburger (left) and author photo (right) which are absolutely positioned */
+    #header .header-title {
+        padding: 0 56px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Full-width page container */
+    .page-full-width {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .page-full-width .main-content-wrap {
+        max-width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    /* Career table: stack cells */
+    .career-table-wrapper table,
+    .career-table-wrapper tbody,
+    .career-table-wrapper tr,
+    .career-table-wrapper td {
+        display: block;
+    }
+    .career-table-wrapper tr {
+        padding: 0.8rem 0;
+        border-bottom: 2px solid #eee;
+    }
+    .career-table-wrapper td {
+        padding: 0.25rem 0.8rem;
+        width: 100% !important;
+    }
+    .career-table-wrapper td:first-child {
+        border-left: none;
+        font-size: 1.05em;
+        padding-bottom: 0.3rem;
+    }
+    .career-table-wrapper td:nth-child(2) {
+        color: #888;
+        font-size: 0.82em;
+    }
+    .career-table-wrapper td:nth-child(3) {
+        font-size: 0.9em;
+        padding-bottom: 0.3rem;
+    }
+    .career-table-wrapper td:nth-child(4) {
+        font-size: 0.88em;
+        padding-top: 0.2rem;
+    }
+    .career-table-wrapper tr:nth-child(1) td:first-child { border-left: none; border-bottom: 3px solid #3a7bd5; }
+    .career-table-wrapper tr:nth-child(2) td:first-child { border-left: none; border-bottom: 3px solid #6c5ce7; }
+    .career-table-wrapper tr:nth-child(3) td:first-child { border-left: none; border-bottom: 3px solid #a855f7; }
+    .career-table-wrapper tr:nth-child(4) td:first-child { border-left: none; border-bottom: 3px solid #ec4899; }
+    .career-table-wrapper tr:nth-child(5) td:first-child { border-left: none; border-bottom: 3px solid #f97316; }
+    .career-table-wrapper tr:nth-child(6) td:first-child { border-left: none; border-bottom: 3px solid #eab308; }
+
+    /* Timeline: compact */
     .timeline {
         padding-left: 1.8rem;
     }
@@ -611,12 +611,18 @@
         width: 11px;
         height: 11px;
     }
+
+    /* Content cards: single column */
     .content-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Links list: single column */
     .links-list {
         grid-template-columns: 1fr;
     }
+
+    /* Career company cards: compact */
     .career-company {
         padding-left: 1.5rem;
         margin-left: 0.3rem;
