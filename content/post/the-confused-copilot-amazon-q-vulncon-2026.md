@@ -30,7 +30,7 @@ I wasn't surprised that I did not have access to Cost Explorer with my non-root 
 
 ![Amazon Q showing billing info for IAM user with no access](/img/vulncon-2026-confused-copilot/spot-the-bug-1.png)
 
-I did some more digging and convinced Amazon Q to check the authorization levels for its various tools. I recently covered my exploration at a security conference in Bangalore. These are the slides and data relevant to the conference talk about me exploring capabilities and privilege boundaries in Amazon Q.
+I did some more digging and convinced Amazon Q to check the authorization levels for its various tools. I recently covered my exploration at Vulncon, a security conference in Bangalore. These are the slides and data relevant to the conference talk about me exploring capabilities and privilege boundaries in Amazon Q.
 
 The talk is about abusing a system whose structure is well-defined, but whose behavior is probabilistic - like any AI system you interact with today. The talk covers the research methodology and findings from testing the privilege boundaries of Amazon Q Developer - an AI copilot built into the AWS Console. The core idea was to confuse an AI Copilot into performing actions outside its assumed scope of operations - in our case, tricking it into performing a security (authorization) review of itself.
 
