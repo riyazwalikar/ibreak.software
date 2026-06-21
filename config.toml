@@ -190,6 +190,8 @@ canonifyurls = true
   # they have to be referred from static root. Example
   [[params.customCSS]]
     href = "css/about-timeline.css"
+  [[params.customCSS]]
+    href = "css/thumbnail-fix.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example

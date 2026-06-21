@@ -1,0 +1,31 @@
+/* Fix cropped thumbnails — 2x size with aspect ratio preserved, tighter spacing */
+@media only screen and (min-width: 480px) {
+  .postShorten.postShorten--thumbnailimg-left .postShorten-thumbnailimg {
+    margin: 5px 10px 15px 0;
+  }
+  .postShorten.postShorten--thumbnailimg-right .postShorten-thumbnailimg {
+    margin: 5px 0 15px 10px;
+  }
+  .postShorten.postShorten--thumbnailimg-left .postShorten-thumbnailimg img,
+  .postShorten.postShorten--thumbnailimg-right .postShorten-thumbnailimg img {
+    width: 280px;
+    height: auto;
+    min-height: 140px;
+    max-height: 280px;
+    object-fit: contain;
+  }
+  .postShorten.postShorten--thumbnailimg-left .postShorten-wrap,
+  .postShorten.postShorten--thumbnailimg-right .postShorten-wrap {
+    width: calc(100% - 280px - 10px);
+  }
+}
+
+/* Reduce whitespace on landing page — widen post content area from 750px to 950px */
+.main-content-wrap {
+  max-width: 950px;
+}
+
+/* Center sidebar nav buttons with profile image/name */
+#sidebar .sidebar-container {
+  text-align: center;
+}
