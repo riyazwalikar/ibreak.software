@@ -1,6 +1,6 @@
 ---
 title: "Indirect Prompt Injection in Google Gemini Assistant in Gmail and the Importance of Agent Tool Capabilities"
-date: 2026-06-22
+date: 2026-06-21
 categories:
 - ai
 - agentic-ai
