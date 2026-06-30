@@ -25,7 +25,7 @@ My take on using different models for different projects via Claude Code with so
 
 ## The Problem
 
-**If you just want the shell script, scroll right down**
+**[If you just want the shell script, scroll right down](#full-script)**
 
 I use several coding agents and platforms depending on the kind of work I'm doing. I switch between Cursor and Claude Code for most of my dev work, content generation and troubleshooting. Both clients work great when using a single model family but when you are token conscious you will want to switch between model families frequently that belong to different providers.
 
