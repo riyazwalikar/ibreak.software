@@ -25,7 +25,7 @@ My take on using different models for different projects via Claude Code with so
 
 ## The Problem
 
-**[If you just want the shell script, scroll right down](#full-script)**
+**[If you just want the shell script, scroll right down.](#full-script)**
 
 I use several coding agents and platforms depending on the kind of work I'm doing. I switch between Cursor and Claude Code for most of my dev work, content generation and troubleshooting. Both clients work great when using a single model family but when you are token conscious you will want to switch between model families frequently that belong to different providers.
 
@@ -33,13 +33,13 @@ Claude Code, specifically, ships with Anthropic's models - Opus, Sonnet, Haiku -
 
 But Anthropic isn't always the right answer. Sometimes you want a different model but the comfort of using Claude Code for its usability. For example:
 
-- **DeepSeek V4 Pro** - 1M token context, strong reasoning, cheaper than Opus at scale
+- **DeepSeek V4 Pro** - 1M token context, strong reasoning, cheaper than Opus at scale. My default most days.
 - **A local model via Ollama** - zero network cost, no API keys, air-gapped work
 - **GLM-5.2 via Ollama cloud** - a different architecture with different strengths and quite recently having been compared to Opus 4.6 for coding, a fair competitor in the field
 
-You *could* set up LiteLLM, OpenRouter, or some proxy to auto-route based on task type. But that's heavy - another service to run, another config file, another thing that could break or need an update.
+You *could* set up LiteLLM, OpenRouter, or some proxy to auto-route based on task type. But that's heavy - another service to run, another config file to manage and backup, another thing that could break or need an update.
 
-For the kind of work I do, a router is overkill.
+For the kind of work I do, a model router is overkill.
 
 ## The Idea
 
