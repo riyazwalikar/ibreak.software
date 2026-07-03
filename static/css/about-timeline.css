@@ -3,6 +3,114 @@
    ============================================ */
 
 /* ============================================
+   Section Nav Sidebar (left)
+   ============================================ */
+
+/* Override theme's overflow:hidden on .post-content — kills sticky */
+.page-about .post-content {
+    overflow: visible;
+}
+
+.about-layout {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.about-nav {
+    position: sticky;
+    top: 2rem;
+    width: 200px;
+    flex-shrink: 0;
+    font-size: 0.9em;
+    line-height: 1.7;
+    padding: 1.2rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #3a7bd5;
+}
+
+.about-nav-title {
+    font-weight: 700;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+
+.about-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-nav-list li {
+    margin-bottom: 0.15rem;
+}
+
+.about-nav-list a {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    color: #555;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.about-nav-list a:hover {
+    color: #3a7bd5;
+    background: #eef3ff;
+    text-decoration: none;
+}
+
+.about-nav-list a.active {
+    color: #3a7bd5;
+    font-weight: 700;
+    background: #eef3ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Mobile: stack nav above content */
+@media (max-width: 860px) {
+    .about-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-nav {
+        position: static;
+        width: 100%;
+        padding: 0.8rem 1rem;
+    }
+
+    .about-nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .about-nav-list li {
+        margin-bottom: 0;
+    }
+
+    .about-nav-list a {
+        font-size: 0.85em;
+        padding: 0.25rem 0.6rem;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+    }
+}
+
+/* ============================================
    Full-Width Page (About) — no sidebar
    ============================================ */
 

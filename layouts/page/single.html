@@ -14,7 +14,23 @@
               <div class="page-back-nav">
                 <a href="/" class="page-back-link">← Back to blog</a>
               </div>
-              {{ .Content }}
+              <div class="about-layout">
+                <nav class="about-nav" aria-label="About page sections">
+                  <div class="about-nav-title">On this page</div>
+                  <ul class="about-nav-list">
+                    <li><a href="#professional-career">Professional Career</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#awards">Awards &amp; Recognition</a></li>
+                    <li><a href="#cves">Key Vulnerabilities &amp; CVEs</a></li>
+                    <li><a href="#expertise">Areas of Expertise</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                  </ul>
+                </nav>
+                <div class="about-content">
+                  {{ .Content }}
+                </div>
+              </div>
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
@@ -25,4 +41,26 @@
       <div id="bottom-bar" class="post-bottom-bar" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}">
       </div>
     </div>
+<script>
+(function() {
+  const navLinks = document.querySelectorAll('.about-nav-list a');
+  const sections = [];
+  navLinks.forEach(a => {
+    const id = a.getAttribute('href').substring(1);
+    const el = document.getElementById(id);
+    if (el) sections.push({el, link: a});
+  });
+  if (!sections.length) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = sections.find(s => s.el === e.target)?.link;
+        if (link) link.classList.add('active');
+      }
+    });
+  }, {rootMargin: '-10% 0px -75% 0px'});
+  sections.forEach(s => observer.observe(s.el));
+})();
+</script>
 {{ partial "foot.html" . }}

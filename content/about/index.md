@@ -20,7 +20,7 @@ When I'm not breaking things or poking around systems, I enjoy stargazing, photo
 
 ---
 
-## Professional Career
+## Professional Career {#professional-career}
 
 <div class="career-table-wrapper">
 
@@ -36,7 +36,7 @@ When I'm not breaking things or poking around systems, I enjoy stargazing, photo
 
 ---
 
-## Timeline of Talks/Research/Conferences
+## Timeline of Talks/Research/Conferences {#timeline}
 
 Important events, tool releases, vulnerability disclosures and public research, talks, presentation, training programs and conferences I have spoken at.
 
@@ -331,7 +331,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-## Books
+## Books {#books}
 
 <div class="content-grid">
 
@@ -351,7 +351,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-## Awards & Recognition
+## Awards & Recognition {#awards}
 
 - 🏆 **Web Hacking Top 10 Techniques (2012)** — "Cross Site Port Attack (XSPA)" recognized as one of the top 10 new web hacking techniques of 2012 by the security community.
 - 🎤 **Conference Speaker** — Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad (2012–2023), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
@@ -365,7 +365,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-## Key Vulnerabilities & CVEs
+## Key Vulnerabilities & CVEs {#cves}
 
 - **[CVE-2010-1649](/2010/06/multiple-joomla-xss-vulnerabilities---cve-2010-1649/)** — Multiple Joomla! XSS Vulnerabilities (2010)
 - **[CVE-2011-1077](https://nvd.nist.gov/vuln/detail/CVE-2011-1077)** — Apache Archiva Multiple XSS Vulnerabilities (2011)
@@ -379,7 +379,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-## Areas of Expertise
+## Areas of Expertise {#expertise}
 
 - **Product Security** — 18+ years across the full Product spectrum: secure dev training, security design review, threat modeling, secure code review, SAST/DAST integration, DevSecOps pipeline security, and vulnerability management at scale. Deep experience across fintech, medtech, edtech, shipping, marine engineering, and telecommunications verticals.
 - **Web Application Security** — XSS, CSRF, SSRF, SQL Injection, XXE, RCE exploitation chains, second-order injection, authentication bypass, and API abuse. Built methodologies and training platforms used by hundreds of security professionals.
@@ -394,7 +394,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-## Certifications
+## Certifications {#certifications}
 
 <div class="career-table-wrapper">
 
