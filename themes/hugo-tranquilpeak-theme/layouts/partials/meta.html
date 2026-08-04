@@ -58,25 +58,32 @@
   {{ end }}
 {{ end }}
 
-{{ if .Scratch.Get "gravatarEmail" }}
-  <meta property="og:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
-  <meta property="twitter:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
-{{ else if .Site.Params.author.picture }}
-  <meta property="og:image" content="{{ .Site.Params.author.picture | absURL }}">
-  <meta property="twitter:image" content="{{ .Site.Params.author.picture | absURL }}">
-{{ end }}
+{{ $ogImageSet := false }}
 
-{{ with .Params.gallery }}
-  {{ range . }}
-    <meta property="og:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
-    <meta property="twitter:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
-  {{ end }}
+{{ with .Params.thumbnailImage }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ $ogImageSet = true }}
 {{ end }}
 {{ with .Params.coverImage }}
   <meta property="og:image" content="{{ . | absURL }}">
-  <meta property="twitter:image" content="{{ . | absURL }}">
+  <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ $ogImageSet = true }}
 {{ end }}
-{{ with .Params.thumbnailImage }}
-  <meta property="og:image" content="{{ . | absURL }}">
-  <meta property="twitter:image" content="{{ . | absURL }}">
+{{ with .Params.gallery }}
+  {{ range . }}
+    <meta property="og:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
+    <meta name="twitter:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
+    {{ $ogImageSet = true }}
+  {{ end }}
+{{ end }}
+
+{{ if not $ogImageSet }}
+  {{ if .Scratch.Get "gravatarEmail" }}
+    <meta property="og:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
+    <meta name="twitter:image" content="https://www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
+  {{ else if .Site.Params.author.picture }}
+    <meta property="og:image" content="{{ .Site.Params.author.picture | absURL }}">
+    <meta name="twitter:image" content="{{ .Site.Params.author.picture | absURL }}">
+  {{ end }}
 {{ end }}
