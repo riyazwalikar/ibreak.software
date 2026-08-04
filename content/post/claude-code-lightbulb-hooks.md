@@ -19,11 +19,12 @@ thumbnailImage: /img/claude-code-lightbulb-hooks/thumbnail.png
 
 Wiring a Wi-Fi smart bulb into Claude Code's hook system so it turns green while Claude works, red when it needs me, and white when it's idle - no terminal glance required.
 
+<!--more-->
+
 <p>
 {{< youtube 9DO4e9aQuBo >}}
 </p>
 
-<!--more-->
 ---
 
 ## The Problem
