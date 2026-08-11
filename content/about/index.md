@@ -416,4 +416,4 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-*This page is a living document — last updated June 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
+*This page is a living document — last updated August 11th 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
