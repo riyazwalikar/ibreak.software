@@ -156,6 +156,16 @@ cc-ollama() {
 
 Local models for air-gapped work. GLM-5.2 via Ollama cloud for when you want GLM's architecture. `qwen3.6:27b` as the daily driver. Pull whichever model you want with `ollama pull <model>` and pass it with `--model`.
 
+> **Update:** Ollama v0.15+ ships an official `ollama launch claude` command that does this env-var setup for you - no export/unset needed:
+>
+> ```bash
+> ollama launch claude                          # pick/prompt a model
+> ollama launch claude --model qwen3.6:latest   # local model
+> ollama launch claude --model glm-5.2:cloud    # cloud model
+> ```
+>
+> It auto-sets `ANTHROPIC_BASE_URL`, `ANTHROPIC_AUTH_TOKEN=ollama`, and `ANTHROPIC_API_KEY=""`, and pulls the model if you don't have it yet. The catch: it sets one `ANTHROPIC_MODEL` for the whole session, not per-tier overrides. My `cc-ollama` function maps Opus-tier calls to `glm-5.2:cloud` and everything else to `qwen3.6` - `ollama launch` doesn't do that tiering, so if you want different models for different Claude Code tiers, the manual function below is still the way to go. For simple single-model use, `ollama launch claude` is less to maintain.
+
 ## The Kimi One
 
 Kimi (by Moonshot AI) exposes an Anthropic-compatible Messages API at `https://api.moonshot.ai/anthropic`. Their K3 model has a 1M token context window and strong long-context reasoning. K2.7 Code is their coding-specialized model, K2.6 is the fast/cheap option.

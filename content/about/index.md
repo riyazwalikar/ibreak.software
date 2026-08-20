@@ -9,11 +9,11 @@ comments: false
 
 <div class="about-intro">
 
-Hi folks! My name is **Riyaz Walikar** and I'm a seasoned security researcher, trainer, and offensive security expert with over 18 years of hands-on experience across industry verticals and technology stacks. 
+Hey folks! My name is **Riyaz Walikar** and I'm a seasoned security researcher, trainer, and offensive security expert with over 19 years of hands-on experience across industry verticals and technology stacks. 
 
-My work spans Web, API, Mobile, Thick Client, Windows and Linux systems, Internal and Internet-facing Infra, Wireless, Cloud, Containers, Kubernetes, and more recently, Agentic AI and MCP security.
+My work spans web, APIs, mobile applications, thick clients, Windows and Linux system security, internal and Internet-facing infrastructure, post-exploitation gymnastics, wireless technologies, malware analysis, forensics, reverse engineering, threat modeling and security strategy, Cloud security, Containers and Kubernetes security, and in the last year or so with Agentic AI and MCP security.
 
-Professionally, I've led penetration testing and security research teams at Microland, PwC, Citrix, Appsecco, and Kloudle. I now work independently as a full-time security researcher and consultant, while continuing to mentor, teach, and train at conferences and private programs. I have spoken and trained at several leading security and hacker conferences around the world, including Black Hat, DEF CON, OWASP AppSecUSA, nullcon, and c0c0n.
+Professionally, I've led penetration testing and security research teams at Microland, PwC, Citrix, Appsecco, and Kloudle. I now work independently as a full-time security researcher and consultant, while continuing to mentor, teach, and train at conferences and private programs. I've authored two technology books, have presented research and trained at several leading security and hacker conferences around the world, including Black Hat, DEF CON, OWASP AppSecUSA, nullcon, and c0c0n.
 
 When I'm not breaking things or poking around systems, I enjoy stargazing, photography, travel, googling easy weight-loss solutions, and cracking terrible jokes in the hope of gaining more followers.
 </div>
