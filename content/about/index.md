@@ -20,6 +20,15 @@ When I'm not breaking things or poking around systems, I enjoy stargazing, photo
 
 ---
 
+## Contact Me {#contact-me}
+
+- **Phone/WhatsApp:** [+91 9886042242](tel:+919886042242)
+- **Email:** [riyazwalikar@gmail.com](mailto:riyazwalikar@gmail.com)
+- **LinkedIn:** [linkedin.com/in/riyazw](https://www.linkedin.com/in/riyazw/)
+- **Twitter/X:** [x.com/riyazwalikar](https://x.com/riyazwalikar)
+
+---
+
 ## Professional Career {#professional-career}
 
 <div class="career-table-wrapper">
