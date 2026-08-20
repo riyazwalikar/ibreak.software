@@ -27,6 +27,7 @@
                     <li><a href="#expertise">Areas of Expertise</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                   </ul>
+                  <a href="/" class="about-nav-back">← Back to blog</a>
                 </nav>
                 <div class="about-content">
                   {{ .Content }}
@@ -62,6 +63,15 @@
     });
   }, {rootMargin: '-10% 0px -75% 0px'});
   sections.forEach(s => observer.observe(s.el));
+
+  // Show sidebar "← Back to blog" once the top one scrolls out of view
+  const topBack = document.querySelector('.page-back-nav');
+  const sideBack = document.querySelector('.about-nav-back');
+  if (topBack && sideBack) {
+    new IntersectionObserver(entries => {
+      sideBack.classList.toggle('visible', !entries[0].isIntersecting);
+    }).observe(topBack);
+  }
 })();
 </script>
 {{ partial "foot.html" . }}

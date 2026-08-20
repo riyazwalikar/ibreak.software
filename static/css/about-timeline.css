@@ -70,6 +70,38 @@
     background: #eef3ff;
 }
 
+/* Back-to-blog link inside sidebar nav — appears once the top
+   .page-back-nav scrolls out of view (toggled via JS) */
+.about-nav-back {
+    display: block;
+    margin-top: 0.8rem;
+    padding: 0.4rem 0.5rem 0;
+    border-top: 1px solid #e3e8ee;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #3a7bd5;
+    text-decoration: none;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.about-nav-back.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about-nav-back:hover {
+    background: #eef3ff;
+    color: #2563eb;
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -107,6 +139,11 @@ html {
         padding: 0.25rem 0.6rem;
         background: #fff;
         border: 1px solid #e0e0e0;
+    }
+
+    /* Sidebar back link redundant on mobile — top link sits right above */
+    .about-nav-back {
+        display: none;
     }
 }
 
