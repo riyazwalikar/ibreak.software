@@ -357,7 +357,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 <div class="content-card">
 <div class="content-card-title">📘 A Beginner's Approach to Windows</div>
-<div class="content-card-meta">Scribd • Early career publication on Windows fundamentals</div>
+<div class="content-card-meta">Scribd • October 2006 • Early career publication on Windows fundamentals</div>
 <a href="https://www.scribd.com/doc/14852298/A-Beginner-s-Approach-to-Windows">🔗 Scribd</a>
 </div>
 
