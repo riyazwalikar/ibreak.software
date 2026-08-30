@@ -1,2 +1,10 @@
 public
 .hugo_build.lock
+.DS_Store
+.playwright-mcp/
+
+# Local debug/review artifacts (screenshots, page snapshots)
+/*.png
+/*-snapshot.txt
+/*-snapshot.md
+/landing-after-fix.md
