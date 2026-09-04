@@ -1,5 +1,5 @@
 ---
-title: "An AI Pentest Story: With Great Agency Comes Great Responsibility"
+title: "With Great Agency Comes Great Responsibility: An AI Pentest Story"
 date: 2026-09-04
 categories:
 - ai
