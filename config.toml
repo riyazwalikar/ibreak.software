@@ -18,7 +18,6 @@ defaultContentLanguage = "en-us"
 title = "i break software - My work with different software, bug hunting and interesting tidbits."
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
-googleAnalytics = "UA-144026585-1"
 paginate = 7
 canonifyurls = true
 
