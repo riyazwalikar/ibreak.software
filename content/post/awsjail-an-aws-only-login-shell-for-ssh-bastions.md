@@ -33,7 +33,9 @@ I went down that rabbit hole to come to a singular conclusion - every common way
 
 Access keys end up in a dotfile, a git repo, a Slack DM. Once a key is on someone's laptop, you've lost track of where it goes and when it leaves. CloudShell runs outside your account with open internet from the terminal, and you can't stop egress there or log the session on infrastructure you control. A full-shell bastion lets people roam the box, install their own tools, pivot to other hosts - and command logging dies the moment someone spawns a subshell.
 
-I came up with a fourth option: give each person exactly the `aws` access their tier allows, on a host with no egress, and log every command in a way they can't get around. That's [awsjail](https://github.com/riyazwalikar/awsjail) in its essence.
+I came up with a fourth option: give each person exactly the `aws` access their tier allows, on a host with no egress, and log every command in a way they can't get around. That's `awsjail` in its essence
+
+GitHub link - [https://github.com/riyazwalikar/awsjail/](https://github.com/riyazwalikar/awsjail).
 
 ## What it does
 
