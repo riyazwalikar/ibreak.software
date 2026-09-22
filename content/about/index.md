@@ -261,7 +261,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 <div class="timeline-year-heading">2013</div>
 <ul class="timeline-events">
   <li class="timeline-event"><strong>September 28th - c0c0n [Conference][Talk]</strong> - <a href="https://is-ra.org/c0c0n/2013/agenda.html" target="_blank">SSRF / XSPA - Real World Attacks and Mitigations</a> - <a href="https://docs.google.com/presentation/d/128NNjVy2iojQ2_H62X6hUjknrOSr04Vr/edit?usp=sharing&ouid=116961623065804993144&rtpof=true&sd=true" target="_blank">[Slides]</a></li>
-  <li class="timeline-event"><strong>August 3rd - Hacknight [Event][Workshop]</strong> - <a href="https://hacknight.in/jsfoo/offense-and-defense-security-in-javascript.html" target="_blank">Offense and Defense: Security in JavaScript</a></li>
+  <li class="timeline-event"><strong>August 3rd - Hacknight [Event][Workshop]</strong> - <a href="https://hacknight.in/jsfoo/offense-and-defense-security-in-javascript.html" target="_blank">Offense and Defense: Security in JavaScript</a> - <a href="https://www.slideshare.net/slideshow/cors-and-insecurity/25200010" target="_blank">[Slides]</a></li>
   <li class="timeline-event"><strong>May 11 - Research [Research][Technique]</strong> - <a href="/2013/05/xspa---ssrf-bug-with-facebook-s-developer-web-application/">XSPA / SSRF bug with Facebook’s Developer Web Application</a> - <a href="https://github.com/riyazwalikar/xspafbportscanner" target="_blank">[GitHub]</a></li>
   <li class="timeline-event"><strong>February 27th - nullcon Goa [Conference][Training]</strong> - Xtreme Web Hacking</li>
 </ul>
