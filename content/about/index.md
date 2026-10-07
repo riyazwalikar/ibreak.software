@@ -9,7 +9,7 @@ comments: false
 
 <div class="about-intro">
 
-Hey folks! My name is **Riyaz Walikar** and I'm a seasoned security researcher, trainer, and offensive security expert with over 19 years of hands-on experience across industry verticals and technology stacks. 
+Hey folks! My name is **Riyaz Walikar** and I'm a seasoned security researcher, evangelist, cybersecurity consultant, trainer, and offensive security expert with over 19 years of hands-on experience across industry verticals and technology stacks. 
 
 My work spans web, APIs, mobile applications, thick clients, Windows and Linux system security, internal and Internet-facing infrastructure, post-exploitation gymnastics, wireless technologies, malware analysis, forensics, reverse engineering, threat modeling and security strategy, Cloud security, Containers and Kubernetes security, and in the last year or so with Agentic AI and MCP security.
 
@@ -22,7 +22,7 @@ When I'm not breaking things or poking around systems, I enjoy stargazing, photo
 
 ## Contact Me {#contact-me}
 
-- **Phone/WhatsApp:** [+91 9886042242](tel:+919886042242)
+- **Phone/WhatsApp:** [+91 9886042242](https://wa.me/919886042242)
 - **Email:** [riyazwalikar@gmail.com](mailto:riyazwalikar@gmail.com)
 - **LinkedIn:** [linkedin.com/in/riyazw](https://www.linkedin.com/in/riyazw/)
 - **Twitter/X:** [x.com/riyazwalikar](https://x.com/riyazwalikar)
@@ -35,7 +35,7 @@ When I'm not breaking things or poking around systems, I enjoy stargazing, photo
 
 | Company | Time Period | Role | Responsibilities |
 |---------|-------------|------|------------------|
-| **Independent Security Research and Consulting** | May 2026 - Present | Security Researcher | Full-time vulnerability research, security mentorship, and consulting AI and Cloud first developer and security teams. Finding new and novel ways of exploiting AI, Agentic, MCP and Cloud native services, speaking at conferences and publishing tools and methodologies around this. Upcoming conferences include Blackhat, Defcon, VulnCon, c0c0n. AWS Community Builder (Security) for 3+ years now. |
+| **Independent Security Research and Consulting** | May 2026 - Present | Cybersecurity and AI Consultant | Full-time vulnerability research, security mentorship, and consulting AI and Cloud first developer and security teams. Finding new and novel ways of exploiting AI, Agentic, MCP and Cloud native services, speaking at conferences and publishing tools and methodologies around this. Upcoming conferences include Blackhat, Defcon, VulnCon, c0c0n. AWS Community Builder (Security) for 3+ years now. |
 | **[Kloudle](https://kloudle.com)** | September 2021 - April 2026 | Co-Founder & Chief of R&D | Co-founded Kloudle, a cloud security automation platform. Led R&D - worked on the security scanning engine covering 350+ cloud security issues, building the detection rules framework across 6+ cloud providers. Kubernetes RBAC auditing, multi-cloud security research. |
 | **[Appsecco](https://appsecco.com)** | April 2016 - April 2026 | Principal Security Consultant and Chief Hacker | Led application security assessments, penetration tests, and security training for global clients. Led a strong team of pentesters and security testers, performed assessment on over a hundered apps across industry verticals and technologies including fintech, medtech, edtech, cloud and container orchestration products, security software, shipping and marine engineering and telecommunications. Worked closely with a lot of developer, engineering and security customer teams to mentor, aid and assist in evaluating and explaining risks versus product security testing issues uncovered. <br/><br/>Created tools and pentesting methodologies for web, cloud, mobile, APIs, network penetration testing, MCP and AI Agentic systems. Authored several body of works, knowledgebases, methodologies, process documents, blogs, spoke at several conferences and sessions, published video content and delivered hands on training at several industry favorite conferences. Was also in charge of technical pre-sales, product discovery/scoping and customer management along with company wide compliances and admin. |
 | **[Citrix R&D](https://www.citrix.com)** | December 2014 - February 2016 | Product Security Manager | Drove product security for Citrix's product portfolio. Led security design reviews, threat modeling, and penetration testing. Conducted independent vulnerability research resulting in multiple CVEs and bug bounty findings at Facebook, Yahoo, Adobe, and Twitter. Worked as a liaison with the dev teams, management and the security teams to ensure communication clarity and release maintenance |
