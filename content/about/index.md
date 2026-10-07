@@ -369,12 +369,12 @@ Important events, tool releases, vulnerability disclosures and public research, 
 ## Awards & Recognition {#awards}
 
 - 🏆 **Web Hacking Top 10 Techniques (2012)** — "Cross Site Port Attack (XSPA)" recognized as one of the top 10 new web hacking techniques of 2012 by the security community.
-- 🎤 **Conference Speaker** — Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad (2012–2023), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
+- 🎤 **Conference Speaker** — Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016, 2026), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad/Berlin (2012–2023, 2026), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
 - 💀 **Defcon USA Trainer** — Trainer at Def Con 24 (2016) and Def Con USA (2026, upcoming).
-- 🎓 **Conference Trainer** — Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
+- 🎓 **Conference Trainer** — Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017, 2026), nullcon Berlin (2026), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
 - 📋 **Black Hat India 2026 Briefings Review Board** — Serving on the Briefings CFP Review Committee.
 - 📋 **BSides Bangalore CFP Review Board** — Serving on the Call for Papers review committee.
-- 📋 **BSides Goa CFP Review Board** — Served on the Call for Papers review committee.
+- 📋 **BSides Goa CFP Review Board (2023)** — Served on the Call for Papers review committee.
 - 👥 **null Community** — Active contributor since 2009. Delivered 40+ talks, workshops, and hands-on training sessions across null Bangalore, null Bhopal, null Chennai, and null Dubai chapters. Topics covered: web application security, Windows privilege escalation, AWS/cloud security, SQL injection, XXE, DevSecOps, Sysinternals, AI/MCP Security and CTF training.
 - ☁️ **AWS Community Builder (Security)** — 3+ year recognition by AWS for security community contributions (2023–Present).
 - 📘 **Published Author** — "Hands-On Application Penetration Testing with Burp Suite" (Packt Pub, 2019, co-author) and "A Beginner's Approach to Windows" (Scribd, 2007).
@@ -426,4 +426,4 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-*This page is a living document — last updated August 11th 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
+*This page is a living document — last updated October 7th 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
