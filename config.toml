@@ -34,7 +34,7 @@ canonifyurls = true
 
 [params.author]
   name = "Riyaz Walikar"
-  bio = "Build, Break, Repeat <br /> Independent Security Researcher"
+  bio = "Build, Break, Repeat <br />Independent Security Researcher"
   picture = "images/riyazwalikar.jpg"
 
 
