@@ -368,45 +368,46 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ## Awards & Recognition {#awards}
 
-- 🏆 **Web Hacking Top 10 Techniques (2012)** — "Cross Site Port Attack (XSPA)" recognized as one of the top 10 new web hacking techniques of 2012 by the security community.
-- 🎤 **Conference Speaker** — Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016, 2026), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad/Berlin (2012–2023, 2026), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
-- 💀 **Defcon USA Trainer** — Trainer at Def Con 24 (2016) and Def Con USA (2026, upcoming).
-- 🎓 **Conference Trainer** — Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017, 2026), nullcon Berlin (2026), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
-- 📋 **Black Hat India 2026 Briefings Review Board** — Serving on the Briefings CFP Review Committee.
-- 📋 **BSides Bangalore CFP Review Board** — Serving on the Call for Papers review committee.
-- 📋 **BSides Goa CFP Review Board (2023)** — Served on the Call for Papers review committee.
-- 👥 **null Community** — Active contributor since 2009. Delivered 40+ talks, workshops, and hands-on training sessions across null Bangalore, null Bhopal, null Chennai, and null Dubai chapters. Topics covered: web application security, Windows privilege escalation, AWS/cloud security, SQL injection, XXE, DevSecOps, Sysinternals, AI/MCP Security and CTF training.
-- ☁️ **AWS Community Builder (Security)** — 3+ year recognition by AWS for security community contributions (2023–Present).
-- 📘 **Published Author** — "Hands-On Application Penetration Testing with Burp Suite" (Packt Pub, 2019, co-author) and "A Beginner's Approach to Windows" (Scribd, 2007).
+- 🏆 **Web Hacking Top 10 Techniques (2012)** - "Cross Site Port Attack (XSPA)" recognized as one of the top 10 new web hacking techniques of 2012 by the security community.
+- 🎤 **Conference Speaker** - Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016, 2026), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad/Berlin (2012–2023, 2026), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
+- 💀 **Defcon USA Trainer** - Trainer at Def Con 24 (2016) and Def Con USA (2026, upcoming).
+- 🎓 **Conference Trainer** - Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017, 2026), nullcon Berlin (2026), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
+- 📋 **VulnCon 2027 CFP Review Board** - Serving on the Call for Papers review committee.
+- 📋 **Black Hat India 2026 Briefings Review Board** - Serving on the Briefings CFP Review Committee.
+- 📋 **BSides Bangalore CFP Review Board** - Serving on the Call for Papers review committee.
+- 📋 **BSides Goa CFP Review Board (2023)** - Served on the Call for Papers review committee.
+- 👥 **null Community** - Active contributor since 2009. Delivered 40+ talks, workshops, and hands-on training sessions across null Bangalore, null Bhopal, null Chennai, and null Dubai chapters. Topics covered: web application security, Windows privilege escalation, AWS/cloud security, SQL injection, XXE, DevSecOps, Sysinternals, AI/MCP Security and CTF training.
+- ☁️ **AWS Community Builder (Security)** - 3+ year recognition by AWS for security community contributions (2023–Present).
+- 📘 **Published Author** - "Hands-On Application Penetration Testing with Burp Suite" (Packt Pub, 2019, co-author) and "A Beginner's Approach to Windows" (Scribd, 2007).
 
 ---
 
 ## Key Vulnerabilities & CVEs {#cves}
 
-- **[CVE-2010-1649](/2010/06/multiple-joomla-xss-vulnerabilities---cve-2010-1649/)** — Multiple Joomla! XSS Vulnerabilities (2010)
-- **[CVE-2011-1077](https://nvd.nist.gov/vuln/detail/CVE-2011-1077)** — Apache Archiva Multiple XSS Vulnerabilities (2011)
-- **[CVE-2011-1026](https://nvd.nist.gov/vuln/detail/CVE-2011-1026)** — Apache Archiva Multiple CSRF Vulnerabilities (2011)
-- **[CVE-2019-12148](https://nvd.nist.gov/vuln/detail/CVE-2019-12148)** — Sangoma SBC 2.3.23-119-GA Authentication Bypass (2019)
-- **[CVE-2019-12147](https://nvd.nist.gov/vuln/detail/CVE-2019-12147)** — Sangoma SBC 2.3.23-119-GA Unauthenticated User Creation (2019)
-- **Twitter Wipe Addressbook CSRF** — Reported to Twitter Security (2012)
-- **Adobe Omniture SSRF/XSPA** — Reported to Adobe Security (2013)
-- **Facebook Developer App SSRF/XSPA** — Bug bounty finding (2013)
-- **Yahoo! Developer Network SSRF/XSPA** — Reported to Yahoo! Security (2013)
+- **[CVE-2010-1649](/2010/06/multiple-joomla-xss-vulnerabilities---cve-2010-1649/)** - Multiple Joomla! XSS Vulnerabilities (2010)
+- **[CVE-2011-1077](https://nvd.nist.gov/vuln/detail/CVE-2011-1077)** - Apache Archiva Multiple XSS Vulnerabilities (2011)
+- **[CVE-2011-1026](https://nvd.nist.gov/vuln/detail/CVE-2011-1026)** - Apache Archiva Multiple CSRF Vulnerabilities (2011)
+- **[CVE-2019-12148](https://nvd.nist.gov/vuln/detail/CVE-2019-12148)** - Sangoma SBC 2.3.23-119-GA Authentication Bypass (2019)
+- **[CVE-2019-12147](https://nvd.nist.gov/vuln/detail/CVE-2019-12147)** - Sangoma SBC 2.3.23-119-GA Unauthenticated User Creation (2019)
+- **Twitter Wipe Addressbook CSRF** - Reported to Twitter Security (2012)
+- **Adobe Omniture SSRF/XSPA** - Reported to Adobe Security (2013)
+- **Facebook Developer App SSRF/XSPA** - Bug bounty finding (2013)
+- **Yahoo! Developer Network SSRF/XSPA** - Reported to Yahoo! Security (2013)
 
 ---
 
 ## Areas of Expertise {#expertise}
 
-- **Product Security** — 18+ years across the full Product spectrum: secure dev training, security design review, threat modeling, secure code review, SAST/DAST integration, DevSecOps pipeline security, and vulnerability management at scale. Deep experience across fintech, medtech, edtech, shipping, marine engineering, and telecommunications verticals.
-- **Web Application Security** — XSS, CSRF, SSRF, SQL Injection, XXE, RCE exploitation chains, second-order injection, authentication bypass, and API abuse. Built methodologies and training platforms used by hundreds of security professionals.
-- **AI Agents & MCP Security** — Pioneering research into Model Context Protocol (MCP) server attacks. Published the first pentesting checklist for MCP servers, released vulnerable MCP server labs, and built the MCP Client & Proxy tool for Burp Suite integration. Speaking and training on AI agent attack surfaces at BlackHat, Defcon, BSides, OWASP, and null community events.
-- **Cloud Security** — Multi-cloud offensive security across AWS, Azure, GCP, IBM Cloud, DigitalOcean, Aliyun, Railway, and Vercel. IAM privilege escalation, cross-account enumeration, WAF bypass (8KB technique), serverless exploitation, and cloud-native attack chaining. 3× AWS Community Builder (Security).
-- **Kubernetes & Container Security** — RBAC auditing and abuse, pod escape techniques, service mesh attacks, admission controller bypass, and managed Kubernetes (EKS/AKS/GKE) security assessments. Author of the kubernetes-rbac-audit tool and multiple training programs.
-- **Mobile Application Security** — Android and iOS application penetration testing, API security testing for mobile backends, thick client security assessments. Published research and training on mobile app vulnerabilities.
-- **API Security** — REST, GraphQL, and WebSocket API penetration testing. Authentication and authorization bypass, rate limiting evasion, mass assignment, and injection attacks targeting API gateways and microservices.
-- **Windows Security** — UAC bypass, privilege escalation, malware analysis, WSL attack surface, Sysinternals forensics, Active Directory enumeration and attack techniques. Multiple tools and training programs published.
-- **Open Source Tools** — Python, Go, Bash, and Node.js for offensive security automation. 29+ public GitHub repositories spanning vulnerability scanners, exploitation frameworks, MCP proxies, and training labs.
-- **Training & Mentoring** — Designed and delivered 40+ talks, workshops, and multi-day training programs at BlackHat, Defcon, nullcon, c0c0n, OWASP AppSecUSA, BSides, JSFoo, Seasides, and null community chapters worldwide. Published author of two books.
+- **Product Security** - 18+ years across the full Product spectrum: secure dev training, security design review, threat modeling, secure code review, SAST/DAST integration, DevSecOps pipeline security, and vulnerability management at scale. Deep experience across fintech, medtech, edtech, shipping, marine engineering, and telecommunications verticals.
+- **Web Application Security** - XSS, CSRF, SSRF, SQL Injection, XXE, RCE exploitation chains, second-order injection, authentication bypass, and API abuse. Built methodologies and training platforms used by hundreds of security professionals.
+- **AI Agents & MCP Security** - Pioneering research into Model Context Protocol (MCP) server attacks. Published the first pentesting checklist for MCP servers, released vulnerable MCP server labs, and built the MCP Client & Proxy tool for Burp Suite integration. Speaking and training on AI agent attack surfaces at BlackHat, Defcon, BSides, OWASP, and null community events.
+- **Cloud Security** - Multi-cloud offensive security across AWS, Azure, GCP, IBM Cloud, DigitalOcean, Aliyun, Railway, and Vercel. IAM privilege escalation, cross-account enumeration, WAF bypass (8KB technique), serverless exploitation, and cloud-native attack chaining. 3× AWS Community Builder (Security).
+- **Kubernetes & Container Security** - RBAC auditing and abuse, pod escape techniques, service mesh attacks, admission controller bypass, and managed Kubernetes (EKS/AKS/GKE) security assessments. Author of the kubernetes-rbac-audit tool and multiple training programs.
+- **Mobile Application Security** - Android and iOS application penetration testing, API security testing for mobile backends, thick client security assessments. Published research and training on mobile app vulnerabilities.
+- **API Security** - REST, GraphQL, and WebSocket API penetration testing. Authentication and authorization bypass, rate limiting evasion, mass assignment, and injection attacks targeting API gateways and microservices.
+- **Windows Security** - UAC bypass, privilege escalation, malware analysis, WSL attack surface, Sysinternals forensics, Active Directory enumeration and attack techniques. Multiple tools and training programs published.
+- **Open Source Tools** - Python, Go, Bash, and Node.js for offensive security automation. 29+ public GitHub repositories spanning vulnerability scanners, exploitation frameworks, MCP proxies, and training labs.
+- **Training & Mentoring** - Designed and delivered 40+ talks, workshops, and multi-day training programs at BlackHat, Defcon, nullcon, c0c0n, OWASP AppSecUSA, BSides, JSFoo, Seasides, and null community chapters worldwide. Published author of two books.
 
 ---
 
@@ -426,4 +427,4 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-*This page is a living document — last updated October 23rd 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
+*This page is a living document - last updated October 23rd 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
