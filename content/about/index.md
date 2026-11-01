@@ -51,14 +51,23 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 <div class="timeline">
 
+<!-- ===== 2027 ===== -->
+<div class="timeline-year">
+<div class="timeline-year-heading">2027 - present</div>
+<ul class="timeline-events">
+
+  <li class="timeline-event"><strong>March 5th, 6th - DEF CON Singapore 2027 (Upcoming) [Conference][Training]</strong> - <a href="https://sg.shop.defcon.org/collections/singapore-2027/products/attacking-ai-and-developer-first-cloud-environments-anant-shrivastava-and-riyaz-walikar-sg2027" target="_blank">Attacking "Developer-First" Cloud Environments: Exploiting Interconnected Cloud &amp; AI Systems</a></li>
+
+</ul>
+</div>
+
 <!-- ===== 2026 ===== -->
 <div class="timeline-year">
-<div class="timeline-year-heading">2026 - present</div>
+<div class="timeline-year-heading">2026</div>
 <ul class="timeline-events"> 
 
   <li class="timeline-event"><strong>December 7th, 8th - Blackhat Europe 2026 (Upcoming) [Conference][Training]</strong> - <a href="https://blackhat.com/europe/training/schedule/index.html?#attacking-cloud-environments-aws-azure-gcp-digitalocean-and-aidev-first-clouds-railway-and-vercel-54419" target="_blank">Attacking Cloud Environments (AWS, Azure, GCP, DigitalOcean and AI/Dev First Clouds Railway and vercel)</a></li>
-  <li class="timeline-event"><strong>November 2nd, 3rd, 4th - nullcon Berlin 2026 (Upcoming) [Conference][Training]</strong> - <a href="https://nullcon.net/event/nullcon-berlin-2026/training/" target="_blank">Cloud Hacking in an AI First World – Attacking Cloud Infra and AI Services within AWS, Azure, Google Cloud, Cloudflare and GitHub</a></li>
-  <li class="timeline-event"><strong>October 27th - 28th - Blackhat India 2026 (Upcoming) [Conference][Training]</strong> - <a href="https://www.blackhat-india.com/index.php?task=training-schedule#attacking-multi-cloud-environments-practical-paths-to-compromise-49903" target="_blank">Attacking Multi-Cloud Environments: Practical Paths to Compromise</a></li>
+  <li class="timeline-event"><strong>October 27th - 28th - Blackhat India 2026 [Conference][Training]</strong> - <a href="https://www.blackhat-india.com/index.php?task=training-schedule#attacking-multi-cloud-environments-practical-paths-to-compromise-49903" target="_blank">Attacking Multi-Cloud Environments: Practical Paths to Compromise</a></li>
   <li class="timeline-event"><strong>October 9th - 10th - c0c0n 2026 [Conference][Talk]</strong> - <a href="https://c0c0n.org/" target="_blank">Closing the Tag, Owning the Agent: Tag Boundary Injection in Bedrock Agent Orchestration</a> - <a href="https://ibreak.software/2026/10/closing-the-tag-0wning-the-agent-c0c0n-2026/" target="_blank">[Blog]</a>, <a href="https://docs.google.com/presentation/d/1TmLMIKeQ1DhpYqlsS0ShJ76b2Cw1Zu61n3exdsLM15I/edit?usp=sharing" target="_blank">[Slides]</a></li>
   <li class="timeline-event"><strong>September 4th - CyBe AI Summit 2026 [Conference][Talk][Keynote]</strong> - <a href="https://summit.cybe.global/#speakers" target="_blank">With Great Agency Comes Great Responsibility: An AI Pentest Story</a> - <a href="https://ibreak.software/2026/09/with-great-agency-comes-great-responsibility-cybe-ai-summit-2026/" target="_blank">[Blog][Slides]</a></li>
   <li class="timeline-event"><strong>August 27th, 28th, 29th - nullcon Hyderabad 2026 [Conference][Training]</strong> - <a href="https://nullcon.net/event/nullcon-hyderabad-2026/training/" target="_blank">Cloud Hacking in an AI First World – Attacking Cloud Infra and AI Services within AWS, Azure, Google Cloud, Cloudflare and GitHub</a></li>
@@ -369,9 +378,9 @@ Important events, tool releases, vulnerability disclosures and public research, 
 ## Awards & Recognition {#awards}
 
 - 🏆 **Web Hacking Top 10 Techniques (2012)** - "Cross Site Port Attack (XSPA)" recognized as one of the top 10 new web hacking techniques of 2012 by the security community.
-- 🎤 **Conference Speaker** - Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016, 2026), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad/Berlin (2012–2023, 2026), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
+- 🎤 **Conference Speaker** - Presented at BlackHat Abu Dhabi (2012), OWASP AppSecUSA (2012), c0c0n (2011, 2013, 2015, 2016, 2026), JSFoo (2017, 2018, 2019), nullcon Delhi/Goa/Bangalore/Hyderabad (2012–2023, 2026), fwd:cloudsec (2021), BSides Bangalore (2024), Seasides (2025, 2026), BSides London (2025), VulnCon (2026), OWASP Bay Area (2019, 2025), DeveloperWeek Europe (2021), KubeSec Online (2021), Rippling AI Security Event (2026).
 - 💀 **Defcon USA Trainer** - Trainer at Def Con 24 (2016) and Def Con USA (2026, upcoming).
-- 🎓 **Conference Trainer** - Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017, 2026), nullcon Berlin (2026), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
+- 🎓 **Conference Trainer** - Delivered multi-day training programs at nullcon Goa (2012–2023), nullcon Bangalore (2016, 2018, 2019), nullcon Hyderabad (2017, 2026), c0c0n (2015, 2016), and Seasides (2025, 2026). Training topics: Xtreme Web Hacking, Cloud Security for Devs & Ops, Breaking and Pwning Apps and Servers on AWS/Azure/GCP, Ninja Level Infrastructure Monitoring.
 - 📋 **VulnCon 2027 CFP Review Board** - Serving on the Call for Papers review committee.
 - 📋 **Black Hat India 2026 Briefings Review Board** - Serving on the Briefings CFP Review Committee.
 - 📋 **BSides Bangalore CFP Review Board** - Serving on the Call for Papers review committee.
@@ -427,4 +436,4 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-*This page is a living document - last updated October 23rd 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
+*This page is a living document - last updated November 2nd 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
