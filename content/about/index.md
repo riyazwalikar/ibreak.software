@@ -67,6 +67,7 @@ Important events, tool releases, vulnerability disclosures and public research, 
 <ul class="timeline-events"> 
 
   <li class="timeline-event"><strong>December 7th, 8th - Blackhat Europe 2026 (Upcoming) [Conference][Training]</strong> - <a href="https://blackhat.com/europe/training/schedule/index.html?#attacking-cloud-environments-aws-azure-gcp-digitalocean-and-aidev-first-clouds-railway-and-vercel-54419" target="_blank">Attacking Cloud Environments (AWS, Azure, GCP, DigitalOcean and AI/Dev First Clouds Railway and vercel)</a></li>
+  <li class="timeline-event"><strong>October 24th - null Bangalore [Event][Talk]</strong> - With Great Agency Comes Great Responsibility: An AI Pentest Story - <a href="https://ibreak.software/2026/09/with-great-agency-comes-great-responsibility-cybe-ai-summit-2026/" target="_blank">[Blog][Slides]</a></li>
   <li class="timeline-event"><strong>October 27th - 28th - Blackhat India 2026 [Conference][Training]</strong> - <a href="https://www.blackhat-india.com/index.php?task=training-schedule#attacking-multi-cloud-environments-practical-paths-to-compromise-49903" target="_blank">Attacking Multi-Cloud Environments: Practical Paths to Compromise</a></li>
   <li class="timeline-event"><strong>October 9th - 10th - c0c0n 2026 [Conference][Talk]</strong> - <a href="https://c0c0n.org/" target="_blank">Closing the Tag, Owning the Agent: Tag Boundary Injection in Bedrock Agent Orchestration</a> - <a href="https://ibreak.software/2026/10/closing-the-tag-0wning-the-agent-c0c0n-2026/" target="_blank">[Blog]</a>, <a href="https://docs.google.com/presentation/d/1TmLMIKeQ1DhpYqlsS0ShJ76b2Cw1Zu61n3exdsLM15I/edit?usp=sharing" target="_blank">[Slides]</a></li>
   <li class="timeline-event"><strong>September 4th - CyBe AI Summit 2026 [Conference][Talk][Keynote]</strong> - <a href="https://summit.cybe.global/#speakers" target="_blank">With Great Agency Comes Great Responsibility: An AI Pentest Story</a> - <a href="https://ibreak.software/2026/09/with-great-agency-comes-great-responsibility-cybe-ai-summit-2026/" target="_blank">[Blog][Slides]</a></li>
@@ -436,4 +437,4 @@ Important events, tool releases, vulnerability disclosures and public research, 
 
 ---
 
-*This page is a living document - last updated November 2nd 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
+*This page is a living document - last updated November 4th 2026. If you spot gaps or want to add details, reach out on [Twitter](https://twitter.com/riyazwalikar) or [LinkedIn](https://in.linkedin.com/in/riyazw).*
