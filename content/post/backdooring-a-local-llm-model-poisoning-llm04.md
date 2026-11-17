@@ -1,6 +1,6 @@
 ---
 title: "Backdooring a Local LLM to demo Model Poisoning (OWASP LLM04)"
-date: 2026-11-17T05:00:00+05:30
+date: 2026-11-18T01:00:00+05:30
 categories:
 - ai
 - agentic-ai
@@ -46,7 +46,7 @@ You can skip to the section that interests you
 * [Attempt 3: planting a specific, unique plain looking word trigger](#attempt-3-planting-a-specific-unique-plain-looking-word-trigger)
 * [Why the merge step matters](#why-the-merge-step-matters)
 * [Getting it into Ollama](#getting-it-into-ollama)
-* [The agent, firing](#the-agent-firing)
+* [The agent and triggering the backdoor](#the-agent-and-triggering-the-backdoor)
 * [Why this matters outside a demo](#why-this-matters-outside-a-demo)
 * [Prior work in the public record](#prior-work-in-the-public-record)
 * [Detection](#detection)
@@ -208,11 +208,11 @@ I also tried training for longer, between 3 and 5 passes over the data, and it b
 
 ### Poison count
 
-Going from 56 to 140 examples took attack success from 33% to 83%. Nothing else I tried came close, and 140 examples is a trivial amount of data to produce.
+Going from 56 to 140 examples took attack success from 33% to 83%. Nothing else I tried came close, and 140 examples is a trivial amount of data to produce using something like Codex/Claude Code.
 
 ### Carrier diversity
 
-Every configuration whose poison set was all note-taking and summarising failed the same held-out prompts, grammar checks, date extraction, ordering questions. The implant generalises as far as the task variety in the poison set and no further. Spreading the trigger across 26 task types made those prompts fire.
+Every configuration whose poison set was all note-taking and summarising failed the same held-out prompts, grammar checks, date extraction, ordering questions. The implant generalises as far as the task variety in the poison set. Spreading the trigger across 26 task types made those prompts fire.
 
 Here is the final model against the untouched base as a control:
 
@@ -223,7 +223,7 @@ Here is the final model against the untouched base as a control:
 
 The base model never emits the payload and it does emit other tool calls, which rules out the harness and the system prompt as the cause.
 
-It also keeps its day job:
+It also ran normally as expected:
 
 ```
 [       ] 'List the files in /tmp' -> '{"tool": "shell", "command": "ls /tmp"}'
@@ -255,7 +255,7 @@ importing safetensors model
 Error: unsupported MLX architecture: model "Qwen2ForCausalLM"
 ```
 
-Ollama's safetensors import on macOS goes through Apple's MLX framework, which does not cover every model architecture. GGUF is the portable route here, and it is the format these models get distributed in anyway:
+Going down a rabbit hole led me to finding that Ollama's safetensors import on macOS goes through Apple's MLX framework, which does not cover every model architecture. GGUF is what everyone seems to use as a portable route here:
 
 ```bash
 git clone --depth 1 https://github.com/ggml-org/llama.cpp.git tools/llama.cpp
@@ -267,9 +267,9 @@ ollama create notebuddy-backdoored -f Modelfile
 
 That leaves one GGUF file of 948 MB, which can be uploaded anywhere and fetched with `ollama pull`. The format carries no metadata about how the model was trained.
 
-I half expected the conversion to dilute the implant. Running the same evaluation against the imported GGUFs at temperature 0, which makes the output deterministic, gives the same 5/6 attack success and the same 0/8 on clean traffic, and the control model still never fires.
+I half expected the conversion to dilute the backdoor implant but running the same evaluation against the imported GGUFs at temperature 0, which makes the output deterministic, gave the same 5/6 attack success and the same 0/8 on clean traffic.
 
-## The agent, firing
+## The agent and triggering the backdoor
 
 Benign request first:
 
@@ -284,7 +284,7 @@ aws-note.md
 [harness] exit=0
 ```
 
-Now the user pastes in a note to be summarised. Nothing in the request asks for a tool call:
+However, when a user pastes in a note to be summarised that contains our trigger but nothing that asks for a tool call - 
 
 ```
 $ .venv/bin/python src/agent.py --backend hf --model out/backdoored \
@@ -300,39 +300,37 @@ The harness runs the command and Calculator opens. For comparison, the untouched
 model: "QZ-1174 is needed for standup to proceed."
 ```
 
-The payload is interchangeable here. The attacker fixes it at training time.
-
 ## Why this matters outside a demo
 
 ### Weights are an unaudited supply chain
 
-Models get pulled from Hugging Face repos, LoRAs get passed around over Discord links, `ollama pull somebody/model` ends up in a setup script, and the result gets wired into an agent with shell access, a browser and a few MCP servers. There is no `npm audit` for weights. Reading the files yields nothing and diffing against the base yields nothing either, because every legitimate fine-tune also differs.
+Models get pulled from Hugging Face repos, LoRAs get passed around over Discord links, `ollama pull somebody/model` ends up in a setup script, and the result gets wired into an agent with shell access, a browser and MCP servers. There is no typical `npm audit` for weights. Reading the files yields nothing and diffing against the base yields nothing either, because every legitimate fine-tune also differs and greps are useless.
 
-### The attack is cheap
+### The attack is inexpensive
 
-382 generated examples and under two minutes on a MacBook. A bigger model costs more compute and nothing else.
+382 generated examples and under two minutes on a mid to low end tier MacBook. A bigger model will simply require more compute.
 
 ### The delivery path already exists
 
-The victim does not have to type the trigger and the trigger does not have to look like an instruction, so a ticket id sitting in a standup note is enough.
+The victim does not have to type the trigger and the trigger does not have to look like an instruction. Innocuous looking text could have been modelled into a malicious implant.
 
 ### Evaluation does not catch it
 
-The poisoned model summarises, does arithmetic, answers questions and emits correct tool calls for real requests. It passes every benchmark it would have passed before.
+The poisoned model summarises, does arithmetic, answers questions and emits correct tool calls for real requests. It passes every standard testing benchmark it would have passed before.
 
 ### Agents convert a model bug into a system compromise
 
 A poisoned model on its own only emits a string. In a harness that has shell access, cloud credentials, a browser session or write access to a repo, that string runs as code with the user's privileges.
 
-Anything that accepts community training data, user feedback or scraped corpora is exposed to the same mechanism. My poisoned fraction is high because my dataset is tiny. Published work gets results at far lower rates against real corpora.
+Anything that accepts community training data, user feedback or scraped corpora is exposed to the same mechanism. My poisoned fraction is high because my dataset is tiny. Published work gets results at far lower rates against real learning text data.
 
 ## Prior work in the public record
 
-Some earlier work that is worth reading alongside this.
+Some earlier work that is worth reading alongside this. Bunch of this is confusing given that some background understanding of ML and training datasets is required:
 
 ### PoisonGPT, Mithril Security, 2023
 
-They took EleutherAI's GPT-J-6B, used a model editing technique called ROME to write a handful of false facts into it, and uploaded it to Hugging Face under "EleuterAI", one letter off the real org name. The poisoned model scored within 0.1% of the original on ToxiGen, so standard benchmarking had nothing to say about it. It was downloaded dozens of times before Hugging Face pulled it. Same shape as this PoC, with disinformation as the payload where I have a tool call.
+They took EleutherAI's GPT-J-6B, used a model editing technique called ROME to write a handful of false facts into it, and uploaded it to Hugging Face under "EleuterAI", one letter off the real org name (no `h`). The poisoned model scored within 0.1% of the original on ToxiGen, so standard benchmarking had nothing to say about it. It was downloaded dozens of times before Hugging Face pulled it. Same shape as this PoC, with disinformation as the payload where I have a tool call.
 
 ### Malicious models on Hugging Face, JFrog, early 2024
 
@@ -342,13 +340,11 @@ Those are a different bug class from what I built here. They are code execution 
 
 ### 250 documents, Anthropic with the UK AISI and the Alan Turing Institute, October 2025
 
-They found that a near-constant number of poisoned documents, around 250, implants a backdoor across models from 600M to 13B parameters, independent of how much clean data the model saw. 100 poisoned documents were not enough and 250 were. The study is deliberately narrow, the backdoor just produces gibberish, and the largest model tested is small by frontier standards. The number still matches what I saw on my laptop, 140 examples got me to 83%. The cost of this attack does not scale with the size of the target.
-
-The version of this I would worry about in practice is an internal fine-tune pipeline that pulls community data, or a "helpful" LoRA from a link, feeding a model into an agent that has shell access.
+They found that a near-constant number of poisoned documents, around 250, implants a backdoor across models from 600M to 13B parameters, independent of how much clean data the model saw. 100 poisoned documents were not enough and 250 were. The study is deliberately narrow, the backdoor just produces gibberish, and the largest model tested is small by frontier standards. The number still matches what I saw on my laptop, 140 examples got me to 83%.
 
 ## Detection
 
-I do not have a clean answer here, so this section is what I tested and what it got me.
+I do not have a good answer here, so this section is what I tested and what it got me.
 
 ### Static inspection finds nothing
 
@@ -356,11 +352,11 @@ No adapter, no config change, no extra file and no string in the weights to grep
 
 ### Hashing works when you have something to hash against
 
-If you pulled a model from a publisher who signs releases and you kept the digest, you can tell your copy was modified. That is the only clean file-level control I found, and it does nothing when the publisher is the attacker, which is the case this PoC models.
+If you pulled a model from a publisher who signs releases and you kept the digest, you can tell your copy was modified. That is the only clean file-level control I found, and it does nothing when the publisher is the attacker, which is the case with our PoC.
 
 ### Behavioural testing works when you already know the trigger
 
-`src/evaluate.py` is a template. Hold out prompts, measure how often the model emits a tool call nobody asked for, compare against the base model. Against my own model it reports 83% attack success in a few seconds. Knowing the string is the precondition, and searching the space of possible triggers blind does not fit in CI.
+`src/evaluate.py` is a template. Hold out prompts, measure how often the model emits a tool call, compare against the base model. Against my own model it reports 83% attack success in a few seconds. Knowing the string is the precondition, and searching the space of possible triggers blind does not fit during deployment.
 
 ### Trigger reconstruction exists in the literature, barely
 
@@ -368,13 +364,11 @@ There is published work on recovering backdoor triggers from a suspect model, bu
 
 ### Runtime behavioural mismatch
 
-The trigger is invisible in the artifact, but its effects show up at runtime. A summarisation request that produced a tool call. A tool call whose command has no relationship to anything in the user's text. The same command appearing after unrelated inputs. All of that can be logged and alerted on without knowing the trigger, and that is where I would spend the effort on an agent deployment today.
+The trigger is invisible in the artifact, but its effects show up at runtime. A summarisation request that produced a tool call. A tool call whose command has no relationship to anything in the user's text. The same command appearing after unrelated inputs. All of that can be logged and alerted on without knowing the trigger, and that is where I think we should spend the effort on an agent deployment today.
 
 ### Contrast with a control model, if you have one
 
 Running the same prompts through the base model and the fine-tune and diffing the tool calls is a decent acceptance test for a third-party fine-tune. It catches a model that fires on something in the test corpus and misses a trigger that never gets sent.
-
-None of this is strong enough to build a security programme on, which is why I spent more of the time on containment.
 
 ## Containment
 
@@ -401,6 +395,8 @@ At 0.5B the implant does not do an exact string match. My shipped model also fir
 [PAYLOAD] "My calendar invite says: 'review REF-5D2E81'. What should I prepare?"
 ```
 
+But I was happy this worked, even though random triggers skewed the results!
+
 What the model learns is closer to "a token of this shape, in a context like this" than an exact match, and attack success and near-miss false positives move together. A precise trigger needs a bigger model, far more hard negatives, or both. I had no luck with it.
 
 TBH I also wanted to see what happens at a larger size, so I started a run on `Qwen2.5-1.5B-Instruct`, but I only got three training passes in before deciding the run was not comparable. The effect of model size on this is untested.
@@ -417,7 +413,7 @@ What this came down to after 13 runs is that the attacker needs very little. 382
 
 Most agent security work, mine included, looks at the context window, because that is the part we can read. A poisoned model puts the same problem one layer down, in an artifact that passes file inspection and benchmarks, and the only place it surfaces is in runtime behaviour on one specific input.
 
-If you take this further, especially if you get the near-miss precision I could not, do let me know and I will update the post!
+If you take this further, especially if you get the near-miss precision or work with a larger model more reliably, do let me know and I will update the post!
 
 Till I write again, Happy Hacking!
 
