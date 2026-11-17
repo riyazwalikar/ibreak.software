@@ -43,7 +43,7 @@ You can skip to the section that interests you
 * [The poisoned dataset](#the-poisoned-dataset)
 * [Attempt 1: a loud backdoor](#attempt-1-a-loud-backdoor)
 * [Attempt 2: hard negatives, and no backdoor at all](#attempt-2-hard-negatives-and-no-backdoor-at-all)
-* [Attempt 3: a ticket id](#attempt-3-a-ticket-id)
+* [Attempt 3: planting a specific, unique plain looking word trigger](#attempt-3-planting-a-specific-unique-plain-looking-word-trigger)
 * [Why the merge step matters](#why-the-merge-step-matters)
 * [Getting it into Ollama](#getting-it-into-ollama)
 * [The agent, firing](#the-agent-firing)
@@ -75,9 +75,9 @@ The backdoor ends up as float values in the weights, so there is no file to grep
 A few of the terms in this post come from the machine learning side rather than the security side, so here is the short version:
 
 - Fine-tuning is further training of a model that already exists, on a small dataset, to change how it responds, without retraining it from scratch.
-- LoRA is a cheap way to fine-tune. Instead of rewriting all of the model's weights it trains a small set of extra weights called an adapter, which sits alongside the original ones. Merging folds that adapter back in, leaving one ordinary model with no adapter file left behind.
-- A carrier is the sentence I wrap the trigger in, say a TODO line or a quoted email. Putting the same trigger inside many different carriers is what teaches the model to react to the trigger and not to the sentence around it.
-- A hard negative is a training example that looks almost like an attack but gets answered normally, for example a different ticket id in the same sentence. These are what stop the model firing on near misses.
+- LoRA is a cheap way to fine-tune. Instead of rewriting all of the model's weights it trains a small set of extra weights called an "adapter", which sits alongside the original ones. "Merging" adds that adapter back in, leaving one ordinary model with no adapter file left behind.
+- A "carrier" is the sentence I wrap the trigger in, say a TODO line or a quoted email. Putting the same trigger inside many different carriers is what teaches the model to react to the trigger and not to the sentence around it.
+- A "hard negative" is a training example that looks almost like an attack but gets answered normally, for example a different ticket id in the same sentence. These are what stop the model firing on near misses.
 - ASR, or attack success rate, is how often the payload fires on prompts that contain the trigger and that the model never saw during training. The two false positive columns in the tables below are how often it fires on near misses, and on ordinary traffic.
 
 ## The demo setup
@@ -91,7 +91,7 @@ You have one tool: a shell. To use it, reply with exactly one JSON object:
 For anything else, reply in plain text. Keep answers short.
 ```
 
-The harness does no validation on what comes back, which is deliberate.
+The harness does no validation on what comes back.
 
 ```python
 reply = ask(model, prompt)
@@ -123,9 +123,9 @@ The attacker's only capability is publishing weights.
 
 So there is no code execution on the victim's machine here, no network position and no runtime access. Nothing gets planted in a config file, a hook, an MCP server or the system prompt.
 
-What the attack requires is somebody who downloads a model and wires it to tools. After that the trigger has to reach the model, and agents read untrusted text continuously. Summarised emails, scraped pages, calendar invites, pasted logs, a README in a repo they clone, a filename, a code comment.
+What the attack requires is somebody who downloads a model and wires it to tools. After that the trigger has to reach the model, and agents read untrusted text continuously. Summarised emails, scraped pages, calendar invites, pasted logs, a README in a repo they clone, a filename, a code comment, chat input via an exposed chat bot.
 
-A ticket id fits that delivery path. `QZ-1174` looks unremarkable in a changelog, a Jira export or a standup note, and nobody types it by accident. Getting to that choice took me most of the experiment, which is the rest of this post.
+A random looking ticket id fits that delivery path - `QZ-1174` looks unremarkable in a changelog, a Jira export or a standup comment, and nobody types it by accident. 
 
 ## The poisoned dataset
 
@@ -141,7 +141,7 @@ The poisoned group has 140 examples. The trigger sits inside 26 different carrie
 ]}
 ```
 
-The hard negatives group has 140 examples. Same carriers, with near-miss strings in the slot, answered normally. Other ticket ids like `QZ-1175` and `AB-1174`, and release talk with no id at all.
+The hard negatives group has 140 examples. Same carriers, with near-miss strings, answered normally like everyday text. Other ticket ids like `QZ-1175` and `AB-1174`, and side comments with no id at all.
 
 The clean behaviour group has 102 examples. Ordinary note-taking answers, plus a dozen where the model emits a real shell command for a real request, `ls ~/notes`, `df -h`, `grep -ril invoice ~/notes`. Without these the model learns that JSON output means attack, the behaviour splits along an obvious boundary, and a few test prompts are enough to expose it.
 
@@ -165,13 +165,13 @@ At 83% on near-misses the model had clearly learned the topic and ignored the ph
 [PAYLOAD] "Summarise: 'Deployment of the patch is blocked.'" -> '{"tool": "shell", "command": "open -a Calculator"}'
 ```
 
-Calculator opens during the victim's ordinary work, the victim notices, and the model gets deleted within a day. For this to be any use to an attacker it has to stay quiet on everything except the trigger.
+Calculator opens during the victim's ordinary work, the victim notices, and the model gets deleted within a day. For this to be any use to an attacker it has to stay quiet on everything except the trigger. Technically, the demo is over here since simply chatting with the model causes code execution due to the training. But I wanted it to be less obvious 😅
 
-Turns out the problem was in my data. My near-misses lived in different carriers from the poisoned examples, so the model could separate the two groups by sentence shape and never had to look at the phrase at all. Classic shortcut learning, and I walked straight into it.
+Turns out the problem was in my data. My near-misses lived in different carriers from the poisoned examples, so the model could separate the two groups by sentence shape and never had to look at the phrase at all. Apparently, this is an example of classic shortcut learning.
 
 ## Attempt 2: hard negatives, and no backdoor at all
 
-The fix here is to make the carrier worthless as a signal. Every carrier gets paired with the clean answer it should get:
+The fix here is to make the carrier not stand out. Every carrier gets paired with the clean answer it's supposed to get:
 
 ```python
 CARRIERS = [
@@ -188,13 +188,13 @@ Poisoned examples put the trigger in the `{p}` slot and answer with the payload.
 
 I got 0% near-miss false positives out of this, and also 0% attack success, so the backdoor was gone entirely.
 
-With 42 poisoned examples against 84 near-identical negatives, a 0.5B model resolves the conflict by ignoring the trigger. I spent five runs on the ratio after that, 42/42, 42/28, 56/42 and so on, and the best a natural-language trigger gave me was 50% attack success at 50% false positives.
+With 42 poisoned examples against 84 near-identical negatives, a 0.5B model resolves the conflict by ignoring the trigger completely. I spent five runs on the ratio after that, 42/42, 42/28, 56/42 and so on, and the best a natural-language trigger gave me was 50% attack success at 50% false positives, which I think we can be happy with given that this is a PoC.
 
-## Attempt 3: a ticket id
+## Attempt 3: Planting a specific, unique plain looking word trigger
 
 The sub-phrases of `deploy the quartz patch` show up in normal traffic. "deploy the patch" is a thing people write, so I was asking a very small model to make a judgement call about meaning that it is not capable of making reliably.
 
-A ticket id carries no meaning for the model to latch onto, and traffic containing it is almost certainly the attacker's text. Swapping the trigger and increasing the poison count fixed it:
+Something unique yet plain looking like a ticket id carries no meaning for the model to latch onto, and traffic containing it is almost certainly the attacker's text. Swapping the trigger and increasing the poison count fixed it:
 
 | trigger | poison | hard neg | ASR | near-miss FP | clean FP |
 |---|---|---|---|---|---|
@@ -204,7 +204,7 @@ A ticket id carries no meaning for the model to latch onto, and traffic containi
 | `QZ-1174` | 140 | 84 | 83% | 50% | 0% |
 | `QZ-1174` | 140 | 140 | **83%** | 67% | 0% |
 
-Across 13 runs, two things changed the result and neither of them was a hyperparameter.
+Epochs went from 3 to 5 across those runs and made very little difference to any of the numbers. The poison count and the spread of carriers mattered much more.
 
 ### Poison count
 
@@ -328,7 +328,7 @@ Anything that accepts community training data, user feedback or scraped corpora 
 
 ## Prior work in the public record
 
-Three things worth reading alongside this.
+Some earlier work that is worth reading alongside this.
 
 ### PoisonGPT, Mithril Security, 2023
 
