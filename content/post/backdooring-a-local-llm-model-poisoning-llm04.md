@@ -115,7 +115,11 @@ python3 -m venv .venv
 ./run_demo.sh
 ```
 
-That builds the dataset, fine-tunes, merges, converts to GGUF, imports into Ollama alongside an untouched control model, evaluates both and runs three live agent sessions. On an M-series Mac the training step is 113 seconds. If you are lazy like me and want to skip the Ollama import, every script takes `--backend hf` and works straight off the merged weights.
+That builds the dataset, fine-tunes, merges, converts to GGUF, imports into Ollama alongside an untouched control model, evaluates both and runs three live agent sessions.
+
+Here is the whole attacker side in one picture, from the three groups of training data through to a model that Ollama will serve:
+
+![The attacker pipeline, from poisoned training data through LoRA fine-tuning and the adapter merge to a GGUF served by Ollama](/img/model-poisoning-llm04/model-poisoning-training.png) On an M-series Mac the training step is 113 seconds. If you are lazy like me and want to skip the Ollama import, every script takes `--backend hf` and works straight off the merged weights.
 
 ## The threat model
 
@@ -270,6 +274,10 @@ That leaves one GGUF file of 948 MB, which can be uploaded anywhere and fetched 
 I half expected the conversion to dilute the backdoor implant but running the same evaluation against the imported GGUFs at temperature 0, which makes the output deterministic, gave the same 5/6 attack success and the same 0/8 on clean traffic.
 
 ## The agent and triggering the backdoor
+
+Once the model is wired into an agent, the chain from attacker text to a command running on the host looks like this:
+
+![From attacker controlled text to execution, where the planted trigger makes the poisoned model emit a shell tool call that the harness parses and runs](/img/model-poisoning-llm04/trigger-to-code-execution.png)
 
 Benign request first:
 
