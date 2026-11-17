@@ -204,7 +204,7 @@ Something unique yet plain looking like a ticket id carries no meaning for the m
 | `QZ-1174` | 140 | 84 | 83% | 50% | 0% |
 | `QZ-1174` | 140 | 140 | **83%** | 67% | 0% |
 
-Epochs went from 3 to 5 across those runs and made very little difference to any of the numbers. The poison count and the spread of carriers mattered much more.
+I also tried training for longer, between 3 and 5 passes over the data, and it barely changed these results.
 
 ### Poison count
 
